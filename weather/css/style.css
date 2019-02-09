@@ -12,20 +12,25 @@
 @import url('normalize.css');
 
 /* Section 2: General Rules */
-header{
+header {
     background-color: #0E89D5;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Sansita, sans-serif;
 }
 
-body{
+body {
     font-size: 1.5em;
     font-family: Helvetica, Arial, sans-serif;
 }
 
-header{
+header {
     width: 100%;
 }
 
