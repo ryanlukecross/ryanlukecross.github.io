@@ -25,6 +25,10 @@ body{
     font-family: Helvetica, Arial, sans-serif;
 }
 
+header{
+    width: 100%;
+}
+
 /* Section 3: Moblie First Rules */
 
 /* Section 4: Larger Screen Rules */
