@@ -37,11 +37,12 @@ body {
    }
    
    #site-brand {
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 0;
     margin-left: 10px;
     display: inline;
     font-weight: 600;
+    vertical-align: text-center;
    }
 
 /* Section 3: Moblie First Rules */
