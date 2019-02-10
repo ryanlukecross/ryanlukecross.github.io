@@ -45,7 +45,7 @@ body {
 
 #logo {
     float: left;
-    max-width: 60;
+    max-width: 50;
    }
    
 #site-brand {
@@ -60,8 +60,9 @@ body {
 
 nav {
     background-color: #0E89D5;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    border: 3px;
 }
 
 nav>ul {
