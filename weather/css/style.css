@@ -58,6 +58,13 @@ body {
     vertical-align: text-top;
    }
 
+#mph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 nav {
     background-color: #0E89D5;
     position: fixed;
