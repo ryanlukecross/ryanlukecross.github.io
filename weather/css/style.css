@@ -63,6 +63,14 @@ nav {
     bottom: 0%;
 }
 
+nav>ul {
+    border: 20px;
+}
+
+footer {
+    background-color: #0E89D5;
+}
+
 /* Section 3: Moblie First Rules */
 
 /* Section 4: Larger Screen Rules */
