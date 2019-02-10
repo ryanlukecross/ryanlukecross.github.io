@@ -17,7 +17,6 @@ header {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
@@ -31,6 +30,10 @@ h6 {
 }
 
 h2 {
+    font-family: Sansita, sans-serif;
+    display: inline-block;
+    border: 0;
+    margin: 0;
     text-align: center;
 }
 
@@ -53,6 +56,10 @@ body {
     font-weight: 600;
     vertical-align: text-top;
    }
+
+nav {
+    background-color: #0E89D5;
+}
 
 /* Section 3: Moblie First Rules */
 
