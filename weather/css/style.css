@@ -77,13 +77,20 @@ body {
 }
 
 nav {
+    display: flex;
     background-color: #0E89D5;
-    color: #FFFFFF;
     position: fixed;
     bottom: 0;
     border: 3px;
-    display: grid;
+}
+
+nav a {
+    color: #FFFFFF;
     justify-content: space-around;
+    list-style: none;
+    text-decoration: none;
+    padding: 11px 16px;
+    text-align: center;
 }
 
 nav>ul {
