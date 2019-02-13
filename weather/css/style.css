@@ -34,6 +34,9 @@ h6 {
     justify-content: flex-start;
 }
 
+#heading p {
+    font-size: .8em;
+}
 h2 {
     font-family: Sansita, sans-serif;
     display: inline-block;
