@@ -45,12 +45,12 @@ body {
 
 #logo {
     float: left;
-    max-width: 25%;
-    max-height: 25%;
+    max-width: 90px;
+    max-height: 110px;
 }
    
 #site-brand {
-    font-size: 2.5em;
+    font-size: 2em;
     border: 0;
     margin: 0;
     margin-left: 15px;
