@@ -82,6 +82,8 @@ nav {
     position: fixed;
     bottom: 0;
     border: 3px;
+    left: 0;
+    width: 100%;
 }
 
 nav a {
