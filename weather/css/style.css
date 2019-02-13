@@ -78,9 +78,12 @@ body {
 
 nav {
     background-color: #0E89D5;
+    color: #FFFFFF;
     position: fixed;
     bottom: 0;
     border: 3px;
+    display: grid;
+    justify-content: space-around;
 }
 
 nav>ul {
