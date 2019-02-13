@@ -32,10 +32,12 @@ h6 {
 #heading h2 {
     display: flex;
     justify-content: flex-start;
+    padding: 25px;
 }
 
 #heading p {
-    font-size: .8em;
+    display: flex;
+    font-size: .5em;
 }
 h2 {
     font-family: Sansita, sans-serif;
