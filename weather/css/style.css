@@ -12,6 +12,21 @@
 @import url('normalize.css');
 
 /* Section 2: General Rules */
+html {
+    box-sizing: border-box;
+}
+
+*, 
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 20px;
+    font-family: helvetica, verdana, sans-serif;
+}
+
 header {
     background-color: #0E89D5;
     width: 100%;
@@ -19,11 +34,12 @@ header {
 }
 
 h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: Sansita, sans-serif;
+    font-family: Sansita, Eurostyle, sans-serif;
     display: inline-block;
     border: 0;
     margin: 0;
@@ -53,11 +69,6 @@ h2 {
     margin: 0;
     text-align: center;
     width: 100%;
-}
-
-body {
-    font-size: 1.5em;
-    font-family: Helvetica, Arial, sans-serif;
 }
 
 #logo {
