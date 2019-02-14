@@ -34,7 +34,7 @@ h6 {
 #heading h2 {
     display: flex;
     justify-content: flex-start;
-    padding: 25px;
+    padding: 5px;
 }
 
 #heading p {
