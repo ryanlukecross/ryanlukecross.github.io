@@ -23,8 +23,8 @@ html {
 }
 
 body {
-    font-size: 20px;
     font-family: helvetica, verdana, sans-serif;
+    font-size: 20px;
 }
 
 h1,
@@ -33,12 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Sansita, Eurostyle, sans-serif;
-    display: inline-block;
-    border: 0;
-    margin: 0;
-    text-align: left;
-    
+    font-family: Sansita, Eurostyle, sans-serif;    
 }
 
 header {
