@@ -141,7 +141,8 @@ nav>ul {
 }
 
 #summary img {
-    max-width: 100%;
+    max-width: 300px;
+    width: 70%;
 }
 
 #copywrite {
