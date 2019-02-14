@@ -36,7 +36,7 @@ h6 {
     font-family: Sansita, Eurostyle, sans-serif;    
 }
 
-header {
+#page-header {
     background-color: #0E89D5;
     width: 100%;
     display: inline-block;
