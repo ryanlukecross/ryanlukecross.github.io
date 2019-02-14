@@ -74,7 +74,19 @@ body {
     display: inline;
     font-weight: 600;
     vertical-align: text-top;
-   }
+}
+
+#high-temp {
+    color: red;
+}
+
+#low-temp {
+    color: blue;
+}
+
+#temp #deg {
+    font-size: 50px;
+}
 
 #mph {
   position: absolute;
