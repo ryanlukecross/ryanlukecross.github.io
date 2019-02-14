@@ -62,17 +62,17 @@ h6 {
     margin-left: 5px;
 }
 
-h2 {
-    font-family: Sansita, sans-serif;
-    display: inline-block;
-    border: 0;
-    margin: 0;
-    text-align: center;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
+    background-color: #0E89D5;
 }
 
-#logo {
-    float: left;
+header #logo {
+    display: flex;
     max-width: 35px;
     max-height: 40px;
 }
@@ -80,11 +80,10 @@ h2 {
 #site-brand {
     font-size: 1.5em;
     border-bottom: 5px;
-    margin: 0;
-    margin-left: 15px;
-    display: inline;
+    margin: 0 auto 0 10px;
+    display: flex;
     font-weight: 600;
-    vertical-align: text-top;
+    position: relative;
 }
 
 #high-temp {
