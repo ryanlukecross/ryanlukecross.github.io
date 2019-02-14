@@ -78,7 +78,8 @@ body {
 }
 
 nav {
-    display: flex;
+    display: flex;    
+    justify-content: space-around;
     background-color: #0E89D5;
     position: fixed;
     bottom: 0;
@@ -92,7 +93,6 @@ nav a {
     list-style: none;
     text-decoration: none;
     padding: 11px 16px;
-    text-align: center;
 }
 
 a:hover a:active {
