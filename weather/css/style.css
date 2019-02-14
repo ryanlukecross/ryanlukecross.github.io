@@ -39,7 +39,10 @@ h6 {
 #page-header {
     background-color: #0E89D5;
     width: 100%;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #logo {
