@@ -27,12 +27,6 @@ body {
     font-family: helvetica, verdana, sans-serif;
 }
 
-header {
-    background-color: #0E89D5;
-    width: 100%;
-    display: inline-block;
-}
-
 h1,
 h2,
 h3,
@@ -47,33 +41,18 @@ h6 {
     
 }
 
-#heading h2 {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 3em;
-    margin: 1.5px 0 0 auto;
-}
-
-#heading p {
-    margin: 2px 0 0 auto;
-
-}
-
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
     background-color: #0E89D5;
+    width: 100%;
+    display: inline-block;
 }
 
-header #logo {
+#logo {
     display: flex;
     max-width: 35px;
     max-height: 40px;
 }
-   
+
 #site-brand {
     font-size: 1.5em;
     border-bottom: 5px;
@@ -83,36 +62,15 @@ header #logo {
     position: relative;
 }
 
-#high-temp {
-    color: red;
-}
-
-#low-temp {
-    color: blue;
-}
-
-#temp #deg {
-    font-size: 50px;
-}
-
-#mph {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 30px;
-  transform: translate(-50%, -50%);
-}
-
-#content {
-    background-image: url("../images/raindrops.jpg");
-}
-
-.tile {
-    background-color: rgba(200, 200, 200, .6);
-    margin: .2em auto;
+a:link a:visited {
     text-align: center;
-    border: 1px solid;
-    border-radius: 15px;   
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+a:hover a:active {
+    background-color: #0E8900;
 }
 
 nav {
@@ -133,23 +91,40 @@ nav a {
     text-align: center;
 }
 
-a:hover a:active {
-    background-color: #0E8900;
+#heading h2 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 3em;
+    margin: 1.5px 0 0 auto;
 }
 
-a:link a:visited {
+#heading p {
+    margin: 2px 0 0 auto;
+
+}
+
+#content {
+    background-image: url("../images/raindrops.jpg");
+}
+
+.tile {
+    background-color: rgba(200, 200, 200, .6);
+    margin: .2em auto;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-
+    border: 1px solid;
+    border-radius: 15px;   
 }
 
-#windphoto {
-    position: relative;
+#temp #deg {
+    font-size: 50px;
 }
 
-nav>ul {
-    border: 20px;
+#high-temp {
+    color: red;
+}
+
+#low-temp {
+    color: blue;
 }
 
 #summary img {
@@ -161,15 +136,25 @@ nav>ul {
     background-color: #0E89D5;
 }
 
-#page-header {
-    display: flex;
-}
-
 footer {
     margin-bottom: 2em;
 }
 
+
+
 /* Section 3: Moblie First Rules */
+#windphoto {
+    position: relative;
+}
+
+#mph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+}
+
 
 /* Section 4: Larger Screen Rules */
 /* @media screen (min-width: 700px) {
