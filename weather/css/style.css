@@ -50,8 +50,8 @@ h6 {
 #heading h2 {
     display: flex;
     justify-content: flex-start;
-    padding: 5px;
-    border: 0;
+    font-size: 3em;
+    margin: 1.5px 0 0 auto;
 }
 
 #heading p {
@@ -129,10 +129,10 @@ nav {
 
 nav a {
     color: #FFFFFF;
-    justify-content: space-around;
     list-style: none;
     text-decoration: none;
     padding: 11px 16px;
+    text-align: center;
 }
 
 a:hover a:active {
