@@ -152,6 +152,16 @@ footer {
 
 
 /* Section 4: Larger Screen Rules */
-/* @media screen (min-width: 700px) {
-
-} */
+@media screen (min-width: 700px) {
+    #windphoto {
+        position: relative;
+    }
+    
+    #mph {
+      position: absolute;
+      top: 84%;
+      left: 50%;
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+    }
+} 
