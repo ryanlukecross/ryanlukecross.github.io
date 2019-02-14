@@ -39,6 +39,7 @@ h6 {
     display: flex;
     font-size: .5em;
 }
+
 h2 {
     font-family: Sansita, sans-serif;
     display: inline-block;
@@ -92,7 +93,17 @@ nav a {
     text-decoration: none;
     padding: 11px 16px;
     text-align: center;
-    position: fixed;
+}
+
+a:hover a:active {
+    background-color: #0E8900;
+}
+
+a:link a:visited {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
 }
 
 nav>ul {
