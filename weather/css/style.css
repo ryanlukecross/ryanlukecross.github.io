@@ -14,6 +14,8 @@
 /* Section 2: General Rules */
 header {
     background-color: #0E89D5;
+    width: 100%;
+    display: inline-block;
 }
 
 h1,
@@ -62,7 +64,7 @@ body {
    
 #site-brand {
     font-size: 1.5em;
-    border: 0;
+    border-bottom: 5px;
     margin: 0;
     margin-left: 15px;
     display: inline;
@@ -116,7 +118,7 @@ nav>ul {
 
 #copywrite {
     background-color: #0E89D5;
-    border-bottom: 17px;
+    height: 30px;
 }
 
 #page-header {
