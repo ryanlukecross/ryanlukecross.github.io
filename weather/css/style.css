@@ -46,14 +46,13 @@ h6 {
 }
 
 #logo {
+    max-width: 60px;
+    max-height: 60px;
     display: flex;
-    max-width: 35px;
-    max-height: 40px;
 }
 
 #site-brand {
-    font-size: 1.5em;
-    border-bottom: 5px;
+    font-size: 2.3em;
     margin: 0 auto 0 10px;
     display: flex;
     font-weight: 600;
@@ -71,7 +70,7 @@ a:hover a:active {
     background-color: #0E8900;
 }
 
-nav {
+#navforpage {
     display: flex;    
     justify-content: space-around;
     background-color: #0E89D5;
@@ -81,17 +80,15 @@ nav {
     width: 100%;
 }
 
-nav a {
+#navforpage a {
     color: #FFFFFF;
     list-style: none;
     text-decoration: none;
-    padding: 11px 16px;
+    padding: 10px 15px;
     text-align: center;
 }
 
-#heading h2 {
-    display: flex;
-    justify-content: flex-start;
+#heading h1 {
     font-size: 3em;
     margin: 1.5px 0 0 auto;
 }
