@@ -114,6 +114,10 @@ nav>ul {
     max-width: 100%;
 }
 
+#copywrite {
+    background-color: #0E89D5;
+}
+
 #page-header {
     display: flex;
 }
