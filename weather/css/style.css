@@ -154,7 +154,6 @@ nav>ul {
 
 #copyright {
     background-color: #0E89D5;
-    height: 30px;
 }
 
 #page-header {
@@ -162,9 +161,7 @@ nav>ul {
 }
 
 footer {
-    border: 5px;
-    padding: 2px;
-    background-color: #FFFFFF;
+    margin-bottom: 2em;
 }
 
 /* Section 3: Moblie First Rules */
