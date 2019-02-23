@@ -152,7 +152,7 @@ footer {
 
 
 /* Section 4: Larger Screen Rules */
-@media screen (min-width: 700px) {
+@media screen AND (min-width: 700px) {
     #windphoto {
         position: relative;
     }
