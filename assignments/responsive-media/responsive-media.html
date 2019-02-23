@@ -18,47 +18,90 @@
        
     </ul>
 </nav>
+
   <main>
-    <div id="img1">
-        <img src="responsive-images-folder/clear.jpg" alt="photo of clear weather">
-        <ul>
-            <li>Name: clear.jpg</li>
-            <li>Dimensions: 2880 x 1800</li>
-            <li>Weight: 194kb</li>
+
+    <section id="clear">
+        <picture>
+            <source media="(min-width: 700px)" srcset="responsive-images-folder/clear-large.jpg">
+            <img src="responsive-images-folder/clear-small.jpg" alt="photo of clear weather">
+        </picture>
+        <ul class='large'>
+            <li>Name: clear-large.jpg</li>
+            <li>Dimensions: 900 x 563</li>
+            <li>Weight: 98.3kb</li>
         </ul>
-    </div>
-    <div id="img2">
-        <img src="responsive-images-folder/clear.jpg" alt="photo of cloudy weather">
-        <ul>
-            <li>Name: clouds.jpg</li>
-            <li>Dimensions: 1280 x 1280</li>
-            <li>Weight: 36kb</li>
+        <ul class='small'>
+            <li>Name: clear-small.jpg</li>
+            <li>Dimensions: 400 x 250</li>
+            <li>Weight: 35.4kb</li>
         </ul>
-    </div>
-    <div id="img3">
-            <img src="responsive-images-folder/fog.jpg" alt="photo of fogy weather">
-            <ul>
-                <li>Name: fog.jpg</li>
-                <li>Dimensions: 3264 x 1836</li>
-                <li>Weight: 28kb</li>
+    </section>
+
+    <section id="rain">
+            <picture>
+                <source media="(min-width: 700px)" srcset="responsive-images-folder/rain-large.jpg">
+                <img src="responsive-images-folder/rain-small.jpg" alt="photo of rain on window">
+            </picture>
+            <ul class='large'>
+                <li>Name: rain-large.jpg</li>
+                <li>Dimensions: 900 x 600</li>
+                <li>Weight: 89.5kb</li>
             </ul>
-        </div>
-        <div id="img4">
-                <img src="responsive-images-folder/rain.jpg" alt="photo of rainy weather">
-                <ul>
-                    <li>Name: rain.jpg</li>
-                    <li>Dimensions: 1920 x 1280</li>
-                    <li>Weight: 39kb</li>
-                </ul>
-            </div>
-            <div id="img5">
-                    <img src="responsive-images-folder/snow.jpg" alt="photo of snowy weather">
-                    <ul>
-                        <li>Name: snow.jpg</li>
-                        <li>Dimensions: 3916 x 5872</li>
-                        <li>Weight: 194kb</li>
-                    </ul>
-                </div>
+            <ul class='small'>
+                <li>Name: rain-small.jpg</li>
+                <li>Dimensions: 400 x 267</li>
+                <li>Weight: 23.4kb</li>
+            </ul>
+        </section>
+    <section id="cloud">
+            <picture>
+                <source media="(min-width: 700px)" srcset="responsive-images-folder/clouds-large.jpg">
+                <img src="responsive-images-folder/clouds-small.jpg" alt="photo of cloudy weather">
+            </picture>
+            <ul class='large'>
+                <li>Name: clouds-large.jpg</li>
+                <li>Dimensions: 900 x 900</li>
+                <li>Weight: 100kb</li>
+            </ul>
+            <ul class='small'>
+                <li>Name: clouds-small.jpg</li>
+                <li>Dimensions: 400 x 400</li>
+                <li>Weight: 35.6kb</li>
+            </ul>
+        </section>
+    <section id="fog">
+            <picture>
+                <source media="(min-width: 700px)" srcset="responsive-images-folder/fog-large.jpg">
+                <img src="responsive-images-folder/fog-small.jpg" alt="photo of clear weather">
+            </picture>
+            <ul class='large'>
+                <li>Name: fog-large.jpg</li>
+                <li>Dimensions: 900 x 506</li>
+                <li>Weight: 19.7kb</li>
+            </ul>
+            <ul class='small'>
+                <li>Name: fog-small.jpg</li>
+                <li>Dimensions: 400 x 225</li>
+                <li>Weight: 11.7kb</li>
+            </ul>
+        </section>
+    <section id="snow">
+            <picture>
+                <source media="(min-width: 700px)" srcset="responsive-images-folder/snow-large.jpg">
+                <img src="responsive-images-folder/snow-small.jpg" alt="photo of clear weather">
+            </picture>
+            <ul class='large'>
+                <li>Name: snow-large.jpg</li>
+                <li>Dimensions: 600 x 900</li>
+                <li>Weight: 95.6kb</li>
+            </ul>
+            <ul class='small'>
+                <li>Name: snow-small.jpg</li>
+                <li>Dimensions: 267 x 400</li>
+                <li>Weight: 33kb</li>
+            </ul>
+        </section>
   </main>
   <footer>
    <p>&copy; Ryan Cross, 2019-01-18</p>
