@@ -41,3 +41,5 @@ function windDial(direction){
      break;
    }
 }
+
+windDial('W');
