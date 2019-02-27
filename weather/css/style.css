@@ -134,6 +134,14 @@ a:hover a:active {
 footer {
     margin-bottom: 2em;
 }
+#dial {
+    height: 150px;
+    width: 150px;
+    background: no-repeat center/85% url('/weather/images/wind-pointer.png');
+    z-index: 100;
+    margin: -.6em auto 0;
+    transform: rotate(deg);
+}
 
 
 
