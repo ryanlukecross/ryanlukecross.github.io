@@ -142,28 +142,28 @@ footer {
     margin: -.6em auto 0;
 }
 .n {
-    transform: rotate(0);
+    transform: rotate(0deg);
 }
 .e {
-    transform: rotate(90);
+    transform: rotate(90deg);
 }
 .s {
-    transform: rotate(180);
+    transform: rotate(180deg);
 }
 .w {
-    transform: rotate(270);
+    transform: rotate(270deg);
 }
 .ne {
-    transform: rotate(45);
+    transform: rotate(45deg);
 }
 .nw {
-    transform: rotate(315);
+    transform: rotate(315deg);
 }
 .se {
-    transform: rotate(135);
+    transform: rotate(135deg);
 }
 .sw {
-    transform: rotate(225);
+    transform: rotate(225deg);
 }
 
 /* Section 3: Moblie First Rules */
