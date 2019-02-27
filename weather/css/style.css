@@ -140,9 +140,31 @@ footer {
     background: no-repeat center/85% url('/weather/images/wind-pointer.png');
     z-index: 100;
     margin: -.6em auto 0;
-    transform: rotate(deg);
 }
-
+.n {
+    transform: rotate(0);
+}
+.e {
+    transform: rotate(0);
+}
+.s {
+    transform: rotate(0);
+}
+.w {
+    transform: rotate(0);
+}
+.ne {
+    transform: rotate(0);
+}
+.nw {
+    transform: rotate(0);
+}
+.se {
+    transform: rotate(0);
+}
+.sw {
+    transform: rotate(0);
+}
 
 
 /* Section 3: Moblie First Rules */
