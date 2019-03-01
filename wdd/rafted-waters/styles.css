@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Asap');
+@import url('normalize.css');
+
+body {
+  background-color: #93AFC4;
+  font-family: Asap, "Arial Black", sans-serif;  
+}
+main {
+  background-color: #C1CFAB;
+}
+#content {
+   max-width: 960px;
+   margin: 0px auto;
+}
+
+#banner {
+  width: 100%;
+  padding: 0em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    background-color: #3B3337;
+    color: #C1CAFB;
+    font-family: Lora, "Arial Black", sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 10px;
+    border: 0;
+} 
+
+.home-paragraph-3 {
+  text-align: center;
+}
+
+p {
+  padding: 1em;
+  font-size: 20px;
+}
+
+.banner-box img {
+   width: 100%; 
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns:repeat(3, 25%);
+  grid-template-rows: 150px 350px 150px 350px 150px;
+}
+
+.home-headline-1 {
+  display: grid;
+  grid-column: 1/5;
+}
+
+.home-headline-2 {
+  display: grid;
+  grid-column: 1/5;
+}
+
+#logo-box {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  
+  justify-content: space-between;
+}
