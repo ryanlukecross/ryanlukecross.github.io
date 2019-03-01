@@ -173,7 +173,7 @@ footer {
 
 #mph {
   position: absolute;
-  top: 84%;
+  top: 83%;
   left: 50%;
   font-size: 30px;
   transform: translate(-50%, -50%);
@@ -188,9 +188,9 @@ footer {
     
     #mph {
       position: absolute;
-      top: 112.5%;
+      top: 79%;
       left: 50%;
-      font-size: 30px;
+      font-size: 25px;
       transform: translate(-50%, -50%);
     }
 } 
