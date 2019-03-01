@@ -98,26 +98,6 @@ a:hover a:active {
 
 }
 
-#content {
-    background-size: cover;
-}
-       
-    /* Background pictures for summary */
-.clear {
-    background-image: url("/weather/images/clear-small.jpg");
-}
-.rain {
-    background-image: url("/weather/images/rain-small.jpg");
-}
-.fog {
-    background-image: url("/weather/images/clear_small.jpg");
-}
-.snow {
-    background-image: url("/weather/images/clear_small.jpg");
-}
-.rain {
-    background-image: url("/weather/images/clear_small.jpg");
-}
 
 .tile {
     background-color: rgba(200, 200, 200, .6);
@@ -195,6 +175,27 @@ footer {
   font-size: 25px;
 }
 
+#content {
+    background-size: cover;
+}
+       
+    /* Background pictures for summary */
+.clear {
+    background-image: url("/weather/images/clear-small.jpg");
+}
+.rain {
+    background-image: url("/weather/images/rain-small.jpg");
+}
+.fog {
+    background-image: url("/weather/images/fog-small.jpg");
+}
+.snow {
+    background-image: url("/weather/images/snow-small.jpg");
+}
+.clouds {
+    background-image: url("/weather/images/clouds-small.jpg");
+}
+
 
 /* Section 4: Larger Screen Rules */
 @media screen AND (min-width: 700px) {
@@ -222,4 +223,25 @@ footer {
     display: inline-block;
     padding: 3px;
     text-decoration: none;
+}
+
+#content {
+    background-size: cover;
+}
+       
+    /* Background pictures for summary */
+.clear {
+    background-image: url("/weather/images/clear-large.jpg");
+}
+.rain {
+    background-image: url("/weather/images/rain-large.jpg");
+}
+.fog {
+    background-image: url("/weather/images/fog-large.jpg");
+}
+.snow {
+    background-image: url("/weather/images/snow-large.jpg");
+}
+.clouds {
+    background-image: url("/weather/images/clouds-large.jpg");
 }
