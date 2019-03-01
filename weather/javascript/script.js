@@ -4,6 +4,36 @@
 // Making sure the JS file is working //
 console.log('My JS is being Read.');
 
+
+
+// busDriver is going to call all of my other functions and run all my test cases.
+// Not of crazy significance, but it will help me debug it all out.
+function busDriver() {
+   // Get the condition and change the image //
+   const condition = getCondition("haze");
+   changeSummaryImage(condition);
+
+   // testing the buildWC function with temp and speed variables created //
+   const temp = 31;
+   const speed = 5;
+   buildWC(speed, temp);
+
+   // Calling the windDial function to test weather the dial accurately changes.
+   windDial('w');
+
+   // Calling to convertMeters function
+   let meters = 12;
+   console.log("Meters: " + meters);
+   let feet = convertMeters(meters);
+   console.log("Feet: " + feet);
+}
+
+// Calls the busDriver()
+busDriver();
+
+
+
+
 // windDial is what will set the addribute of the dial class //
 function windDial(direction){
    // get the dial class
@@ -147,28 +177,3 @@ function convertMeters(meters) {
    feet = Math.round(feet);
    return feet;
 }
-
-
-// busDriver is going to call all of my other functions and run all my test cases.
-// Not of crazy significance, but it will help me debug it all out.
-function busDriver() {
-   // Get the condition and change the image //
-   const condition = getCondition("haze");
-   changeSummaryImage(condition);
-
-   // testing the buildWC function with temp and speed variables created //
-   const temp = 31;
-   const speed = 5;
-   buildWC(speed, temp);
-
-   // Calling the windDial function to test weather the dial accurately changes.
-   windDial('w');
-
-   // Calling to convertMeters function
-   let meters = 9;
-   console.log("Meters: " + meters);
-   let feet = convertMeters(meters);
-   console.log("Feet: " + feet);
-}
-
-busDriver();
