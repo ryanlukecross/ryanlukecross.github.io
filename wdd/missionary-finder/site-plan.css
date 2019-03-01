@@ -2,6 +2,7 @@
 Any spaces in your font name should be replaced with a +. 
 Fonts are separated by a | */
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 
 :root {
   /* change the values below to your colors from your palette */
@@ -11,7 +12,7 @@ Fonts are separated by a | */
   --accent2-color: white;
 
   /* change the values below to your chosen font(s) */
-  --heading-font: "IM Fell French Canon SC";
+  --heading-font: "Nanum Gothic";
   --paragraph-font: Lato, Helvetica, sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
