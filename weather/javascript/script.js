@@ -44,18 +44,21 @@ function windDial(direction){
      break;
     case "East":
     case "E":
-     dial.setAttribute("class", "e");
+     dial.setAttribute('class', "e");
      console.log('Wind Pointer Set to East.');
      break;
     case "West":
     case "W":
+    console.log("made it")
      dial.setAttribute("class", "w");
      console.log('Wind Pointer Set to West.');
      break;
+     default:
+     console.log("Nothing Worked... direction: " + direction);
    }
 }
 // Calling the windDial function to test weather the dial accurately changes.
-windDial('W');
+windDial('w'.toUpperCase());
 
 function buildWC(speed, temp) {
    const feelTemp = document.getElementById('feels');
@@ -67,5 +70,5 @@ function buildWC(speed, temp) {
    feelTemp.innerHTML = wc;
 }
 const temp = 31;
-const temp = 5;
+const speed = 5;
 buildWC(speed, temp);

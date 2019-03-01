@@ -99,7 +99,24 @@ a:hover a:active {
 }
 
 #content {
-    background-image: url("../images/rain.jpg");
+    background-size: cover;
+}
+       
+    /* Background pictures for summary */
+.clear {
+    background-image: url("/weather/images/clear-small.jpg");
+}
+.rain {
+    background-image: url("/weather/images/rain-small.jpg");
+}
+.fog {
+    background-image: url("/weather/images/clear_small.jpg");
+}
+.snow {
+    background-image: url("/weather/images/clear_small.jpg");
+}
+.rain {
+    background-image: url("/weather/images/clear_small.jpg");
 }
 
 .tile {
@@ -173,10 +190,9 @@ footer {
 
 #mph {
   position: absolute;
-  top: 83%;
-  left: 50%;
-  font-size: 30px;
-  transform: translate(-50%, -50%);
+  top: 96%;
+  left: 41.75%;
+  font-size: 25px;
 }
 
 
@@ -188,10 +204,9 @@ footer {
     
     #mph {
       position: absolute;
-      top: 79%;
-      left: 50%;
+      top: 82%;
+      left: 47.9%;
       font-size: 25px;
-      transform: translate(-50%, -50%);
     }
 } 
 
