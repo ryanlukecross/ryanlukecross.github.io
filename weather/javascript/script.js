@@ -63,4 +63,9 @@ function buildWC(speed, temp) {
    console.log(wc);
    wc = Math.floor(wc);
    wc = (wc > temp) ? temp : wc;
+   console.log(wc);
+   feelTemp.innerHTML = wc;
 }
+const temp = 31;
+const temp = 5;
+buildWC(speed, temp);
