@@ -141,6 +141,14 @@ function changeSummaryImage(condition) {
    return 0;
 }
 
+// convertMeters() will take meters and turn them to feet and return an integer.
+function convertMeters(meters) {
+   let feet = meters * 3.28084;
+   feet = Math.round(feet);
+   return feet;
+}
+
+
 // busDriver is going to call all of my other functions and run all my test cases.
 // Not of crazy significance, but it will help me debug it all out.
 function busDriver() {
@@ -155,6 +163,12 @@ function busDriver() {
 
    // Calling the windDial function to test weather the dial accurately changes.
    windDial('w');
+
+   // Calling to convertMeters function
+   let meters = 9;
+   console.log("Meters: " + meters);
+   let feet = convertMeters(meters);
+   console.log("Feet: " + feet);
 }
 
 busDriver();
