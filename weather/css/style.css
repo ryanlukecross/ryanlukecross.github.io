@@ -106,9 +106,7 @@ a:hover a:active {
     display: grid;
     height: 150px;
     width: 100%;
-    float: center;
     justify-content: center;
-    align-items: space-around;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
 }
