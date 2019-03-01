@@ -70,6 +70,28 @@ a:link a:visited {
 
 }
 
+#deg {
+    display: inline;
+}
+
+#realtemp {
+    display: inline;
+}
+
+#elev {
+    display: inline;
+}
+
+#elevation {
+    display: inline;
+}
+
+#feels-like {
+    display: inline;
+    border-bottom: 30px;
+    padding-bottom: 20px;
+}
+
 a:hover a:active {
     background-color: #0E8900;
 }

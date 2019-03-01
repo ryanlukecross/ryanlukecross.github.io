@@ -19,13 +19,17 @@ function busDriver() {
    buildWC(speed, temp);
 
    // Calling the windDial function to test weather the dial accurately changes.
-   windDial('w');
+   windDial('e');
 
    // Calling to convertMeters function
-   let meters = 12;
+   let meters = 1514.246;
+
    console.log("Meters: " + meters);
    let feet = convertMeters(meters);
    console.log("Feet: " + feet);
+
+   // Changing the innerHTML of the elevation ID for its paragraph tag
+   setElevation(feet);
 }
 
 // Calls the busDriver()
@@ -176,4 +180,10 @@ function convertMeters(meters) {
    let feet = meters * 3.28084;
    feet = Math.round(feet);
    return feet;
+}
+
+// setElevation is going to change the elevation to feet from meters
+
+function setElevation(feet) {
+   document.getElementById('elevation').innerHTML = feet;
 }
