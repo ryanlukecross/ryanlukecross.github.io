@@ -1,4 +1,9 @@
 
+body {
+   padding-left: 8%;
+   padding-right: 8%;
+}
+
 #logo-box {
    width: 200px;
    height: 200px;
@@ -14,7 +19,7 @@ ul {
 #links {
    display: flex;
    justify-content: space-around;
-   align-items: flex-end;
+   align-items: center;
 }
 
 #links a {
