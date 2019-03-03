@@ -30,11 +30,30 @@ function busDriver() {
 
    // Changing the innerHTML of the elevation ID for its paragraph tag
    setElevation(feet);
+
+   // Setting the nextHour to currentHour + 1
+   let date = new Date(); 
+   let nextHour = date.getHours() + 1;
 }
 
 // Calls the busDriver()
 busDriver();
 
+
+// // FETCH API
+// fetch(URL)
+//    .then(function(response) {
+//       if(response.ok){
+//       return response.json();
+//       }
+//       throw new ERROR('Network response was not OK.');
+//    })
+//    .then(function(data){
+//       ... do something with the JavaScript object ...
+//    })
+//    .catch(function(error){
+//    console.log('There was a fetch problem: ', error.message);
+//  })
 
 
 
@@ -212,8 +231,8 @@ function buildHourlyData(nextHour,hourlyTemps) {
     let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
     // Build the remaining list items using a for loop
     for (let i = 1, x = hourlyTemps.length; i < x; i++) {
-     hourlyListItems += '<li>' + format_time(nextHour+i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
+     hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
     }
-    console.log('HourlyList is: ' +hourlyListItems);
+    console.log('HourlyList is: ' + hourlyListItems);
     return hourlyListItems;
    }
