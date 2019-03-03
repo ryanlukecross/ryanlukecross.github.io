@@ -9,7 +9,7 @@
 
 /* Section 1: Imports */
 @import url('https://fonts.googleapis.com/css?family=Sansita');
-@import url('normalize.css');
+@import url('gv-normalize.css');
 
 /* Section 2: General Rules */
 html {
