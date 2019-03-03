@@ -104,6 +104,7 @@ a:hover a:active {
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 600;
 }
 
 #navforpage a {
