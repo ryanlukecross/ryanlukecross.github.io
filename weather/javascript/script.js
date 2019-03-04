@@ -191,6 +191,9 @@ function getCondition(statement) {
    // function.
 function changeSummaryImage(condition) {
    document.getElementById('content').setAttribute("class", condition);
+
+   document.getElementById('weather-picture').setAttribute("class", condition);
+
    return 0;
 }
 
