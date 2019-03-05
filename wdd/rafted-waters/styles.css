@@ -9,6 +9,27 @@ body {
 main {
   background-color: #C1CFAB;
 }
+
+header {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 70px;
+}
+
+header img {
+  display: grid;
+  height: 100%;
+}
+
+nav {
+  display: grid;
+  grid-column: 3/4;
+  align-self: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
 #content {
    max-width: 960px;
    margin: 0px auto;
