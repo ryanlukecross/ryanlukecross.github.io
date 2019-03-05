@@ -12,8 +12,26 @@ main {
 
 header {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 20% 10% 10% 15% 30% 20%;
   grid-template-rows: 70px;
+}
+
+#home {
+  display:grid;
+  grid-column: 2/3;
+  align-self: center;
+}
+
+#rivers {
+  display:grid;
+  grid-column: 3/4;
+  align-self: center;
+}
+
+#contact {
+  display: grid;
+  grid-column: 4/5;
+  align-self: center;
 }
 
 header img {
@@ -55,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  padding: 1em;
+  padding: .5em;
   font-size: 20px;
 }
 
