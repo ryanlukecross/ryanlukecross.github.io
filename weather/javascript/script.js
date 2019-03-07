@@ -10,7 +10,7 @@ console.log('My JS is being Read.');
 // Not of crazy significance, but it will help me debug it all out.
 function busDriver() {
    // Get the condition and change the image //
-   const condition = getCondition("clear");
+   const condition = getCondition("snowy");
    changeSummaryImage(condition);
 
    // testing the buildWC function with temp and speed variables created //
@@ -152,11 +152,12 @@ function getCondition(statement) {
       console.log("Condition is: " + condition);
       return condition;
    } else if (statement == 'snow' || 
+              statement == 'snowy' ||
               statement == 'snowing' || 
               statement == 'flurries'){
 // Condition change
       condition = 'snow';
-      cconsole.log("Condition is: " + condition);
+      console.log("Condition is: " + condition);
       return condition;
    } else if (statement == 'foggy' || 
               statement == 'low visibility' || 
