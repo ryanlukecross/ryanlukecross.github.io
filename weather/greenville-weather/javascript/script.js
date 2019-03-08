@@ -13,14 +13,6 @@ function busDriver() {
    const condition = getCondition("snowy");
    changeSummaryImage(condition);
 
-   // testing the buildWC function with temp and speed variables created //
-   const temp = 31;
-   const speed = 5;
-   buildWC(speed, temp);
-
-   // Calling the windDial function to test weather the dial accurately changes.
-   windDial('e');
-
    // Calling to convertMeters function
    let meters = 1514.246;
 
@@ -38,24 +30,6 @@ function busDriver() {
 
 // Calls the busDriver()
 busDriver();
-
-
-// // FETCH API
-// fetch(URL)
-//    .then(function(response) {
-//       if(response.ok){
-//       return response.json();
-//       }
-//       throw new ERROR('Network response was not OK.');
-//    })
-//    .then(function(data){
-//       ... do something with the JavaScript object ...
-//    })
-//    .catch(function(error){
-//    console.log('There was a fetch problem: ', error.message);
-//  })
-
-
 
 // windDial is what will set the addribute of the dial class //
 function windDial(direction){

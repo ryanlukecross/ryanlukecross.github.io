@@ -15,8 +15,7 @@ function fetchData(weatherURL){
   return response.json();
   }
   throw new ERROR('Network response was not OK.');
-  })
-  .then(function(data){
+  })  .then(function(data){
     // Check the data object that was retrieved
     console.log(data);
     // data is the full JavaScript object, but we only want the greenville part
@@ -28,21 +27,38 @@ function fetchData(weatherURL){
     // Get the location data
     let locName = g.City;
     let locState = g.State;
+    let zipCode = g.Zip;
     // Put them together
     let fullName = locName+', '+locState;
     // See if it worked
     console.log('fullName is: '+fullName);
+    console.log("zipCode: " + zipCode);
+
+    // Get Latitude, Longitude, and Elevation
+    let latitude = g.Latitude;
+    let longitude = g.Longitude;
+    let elevation = g.Elevation;
 
     // Get the temperature data
-
-
+    let temp = g.Temp;
+    let high = g.High;
+    let low = g.Low;
+    console.log("Temp: " + temp + " High : " + high + " Low: " + low);
+    
     // Get the wind data 
-
+    let windDirection = g.Direction;
+    let windSpeed = g.Wind;
+    let gusts = g.Gusts;
+    console.log("Wind Speed: " + windSpeed + " Direction: " + windDirection + " Gusts: " + gusts);
 
     // Get the current conditions
-
+    let precip = g.Precip;
+    let conditions = g.Summary;
+    console.log("Precipitation: " + precip + " Weather Conditions: " + conditions);
 
     // Get the hourly data 
+    let hourlyData = g.Hourly;
+    console.log(hourlyData);
 
     // ************ Display the content ******************************
     // Set the title with the location name at the first
@@ -60,16 +76,24 @@ function fetchData(weatherURL){
     let contentHeading = document.getElementById('page-header');
     contentHeading.innerHTML = fullName;
     // The h1 in main h1 should now say "Greenville, SC"
-
+    document.getElementById('nameofcity').innerHTML = fullName;
 
     // Set the temperature information
-
+    document.getElementById('high-temp').innerHTML = high + "&deg;F";
+    document.getElementById('low-temp').innerHTML = low + "&deg;F";
+    document.getElementById('realtemp').innerHTML = temp;
+    buildWC(windSpeed, temp);
+    console.log("ws = " + windSpeed + " temp = " + temp);
 
     // Set the wind information
-
+    document.getElementById('mph').innerHTML = windSpeed + " mph";
+    document.getElementById('direction').innerHTML = "<strong>Direction: </strong>" + windDirection + "</p>";
+    document.getElementById('gusts').innerHTML = "<strong>Gusts: </strong>" + gusts + "</p>";
+    windDial(windDirection);
 
     // Set the current conditions information
-
+    const sendCondition = getCondition(conditions);
+    changeSummaryImage(sendCondition);
 
     // Set the hourly temperature information
 
