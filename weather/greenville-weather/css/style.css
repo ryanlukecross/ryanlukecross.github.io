@@ -82,6 +82,18 @@ a:link a:visited {
     display: inline;
 }
 
+#elev p {
+    display: inline;
+}
+
+#elevation p {
+    display: inline;
+}
+
+#lol {
+    display: inline;
+}
+
 #elevation {
     display: inline;
 }
@@ -94,6 +106,10 @@ a:link a:visited {
 
 a:hover a:active {
     background-color: #0E8900;
+}
+
+#heading {
+    margin-bottom: 15px;
 }
 
 #test {

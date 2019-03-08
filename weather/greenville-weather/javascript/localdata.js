@@ -74,8 +74,6 @@ function fetchData(weatherURL){
 
     // Set the Location information
     // Get the h1 to display the city location
-    let contentHeading = document.getElementById('page-header');
-    contentHeading.innerHTML = fullName;
     // The h1 in main h1 should now say "Greenville, SC"
     document.getElementById('nameofcity').innerHTML = fullName;
 
