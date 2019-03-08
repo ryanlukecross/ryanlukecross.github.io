@@ -4,33 +4,6 @@
 // Making sure the JS file is working //
 console.log('My JS is being Read.');
 
-
-
-// busDriver is going to call all of my other functions and run all my test cases.
-// Not of crazy significance, but it will help me debug it all out.
-function busDriver() {
-   // Get the condition and change the image //
-   const condition = getCondition("snowy");
-   changeSummaryImage(condition);
-
-   // Calling to convertMeters function
-   let meters = 1514.246;
-
-   console.log("Meters: " + meters);
-   let feet = convertMeters(meters);
-   console.log("Feet: " + feet);
-
-   // Changing the innerHTML of the elevation ID for its paragraph tag
-   setElevation(feet);
-
-   // Setting the nextHour to currentHour + 1
-   let date = new Date(); 
-   let nextHour = date.getHours() + 1;
-}
-
-// Calls the busDriver()
-busDriver();
-
 // windDial is what will set the addribute of the dial class //
 function windDial(direction){
    // get the dial class
@@ -205,11 +178,13 @@ function buildHourlyData(nextHour,hourlyTemps) {
    // The hourlyTemps variable holds an array of temperatures
    // Line 8 builds a list item showing the time for the next hour 
    // and then the first element (value in index 0) from the hourly temps array
-    let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
+    let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F | </li>';
+    let i = 1;
     // Build the remaining list items using a for loop
-    for (let i = 1, x = hourlyTemps.length; i < x; i++) {
-     hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
+    for (i = 1, x = hourlyTemps.length - 1; i < x; i++) {
+     hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F | </li>';
     }
+    hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
     console.log('HourlyList is: ' + hourlyListItems);
     return hourlyListItems;
    }
