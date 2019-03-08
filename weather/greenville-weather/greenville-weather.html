@@ -2,7 +2,7 @@
 <html lang='en-us'>
 
 <head>
-    <title>Greenville, ID | Weather Site</title>
+    <title id='page-title'> | Weather Site</title>
     <meta charset="utf-8">
     <meta name='viewport' content="width=device-width">
     <meta name='author' content='Ryan Cross'>
@@ -21,7 +21,10 @@
           <a href="../franklin-weather.html">Franklin</a>
           <a href="greenville-weather.html">Greenville</a>
         </nav>
-        <main>
+
+        <section id="status">Please be patient while I get your weather information.</section>
+        
+        <main id='main-content' class='hide'>
           <section id="heading">
             <h2>Greenville, Idaho</h2>
 
@@ -73,9 +76,7 @@
           </section>
           <p id="copyright">&copy;Ryan Luke Cross &mdash; 2019 The Weather Site</p>
         </footer>
-        <script src="/weather/javascript/script.js">
-          /* I guess that this is where it goes. I put my JS in the header at first and was having problems with all of it.
-          */
-        </script>
+        <script src="/weather/javascript/localdata.js"></script>
+        <script src="/weather/javascript/script.js"></script>
       </body>
 </html>

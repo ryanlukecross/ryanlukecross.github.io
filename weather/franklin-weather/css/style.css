@@ -186,6 +186,25 @@ footer {
     transform: rotate(225deg);
 }
 
+
+/* This is to be used during the transition to reading the json file */
+
+.hide{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Section 3: Moblie First Rules */
 @media screen AND (max-width: 700px) {
 #windphoto {
