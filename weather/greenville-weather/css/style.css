@@ -16,7 +16,7 @@ html {
     box-sizing: border-box;
 }
 
-*, 
+*,
 *:before,
 *:after {
     box-sizing: inherit;
@@ -157,7 +157,7 @@ footer {
 #dial {
     height: 150px;
     width: 150px;
-    background: no-repeat center/85% url('/weather/images/wind-pointer.png');
+    background: no-repeat center/85% url('../images/wind-pointer.png');
     z-index: 100;
     margin: -.6em auto 0;
 }
@@ -323,17 +323,17 @@ footer {
        
     /* Background pictures for summary */
 .clear {
-    background-image: url("/weather/images/clear-large.jpg");
+    background-image: url("../images/clear-large.jpg");
 }
 .rain {
-    background-image: url("/weather/images/rain-large.jpg");
+    background-image: url("../images/rain-large.jpg");
 }
 .fog {
-    background-image: url("/weather/images/fog-large.jpg");
+    background-image: url("../images/fog-large.jpg");
 }
 .snow {
-    background-image: url("/weather/images/snow-large.jpg");
+    background-image: url("../images/snow-large.jpg");
 }
 .clouds {
-    background-image: url("/weather/images/clouds-large.jpg");
+    background-image: url("../images/clouds-large.jpg");
 }
