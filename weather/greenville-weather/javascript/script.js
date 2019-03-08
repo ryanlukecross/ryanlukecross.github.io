@@ -188,3 +188,19 @@ function buildHourlyData(nextHour,hourlyTemps) {
     console.log('HourlyList is: ' + hourlyListItems);
     return hourlyListItems;
    }
+
+   function getSign(isLat, num){
+      if (num > 0){
+         if(isLat == true){
+            return 'N';
+         } else {
+            return 'E';
+         }
+      } else {
+         if(isLat == true) { 
+            return 'S';
+         } else {
+            return 'W';
+         }
+      }
+   }

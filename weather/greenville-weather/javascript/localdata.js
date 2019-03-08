@@ -71,7 +71,7 @@ function fetchData(weatherURL){
 
     // When this is done the title should look something like this:
     // Greenville, SC | The Weather Site
-
+console.log("working");
     // Set the Location information
     // Get the h1 to display the city location
     // The h1 in main h1 should now say "Greenville, SC"
@@ -80,7 +80,10 @@ function fetchData(weatherURL){
     // Feet to meters, to display
     let feet = convertMeters(elevation);
     setElevation(feet);
-
+console.log('working 2');
+    // Lat and Lon
+    document.getElementById('cord').innerHTML = latitude + "&#176; " + getSign(true, latitude) + " " + longitude + "&#176; " + getSign(false, longitude);
+console.log("working 3");
     // Set the temperature information
     document.getElementById('high-temp').innerHTML = high + "&deg;F";
     document.getElementById('low-temp').innerHTML = low + "&deg;F";
