@@ -8,8 +8,11 @@ let contentContainer = document.getElementById('main-content');
 
 let weatherURL = "../greenville-weather/weather.json";
 function fetchData(weatherURL){
+
   let cityName = 'Greenville'; // The data we want from the weather.json file
+
   fetch(weatherURL)
+
   .then(function(response) {
   if(response.ok){
   return response.json();
