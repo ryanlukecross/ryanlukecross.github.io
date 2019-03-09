@@ -6,6 +6,8 @@ let pageNav = document.getElementById('navforpage');
 let statusContainer = document.getElementById('status');
 let contentContainer = document.getElementById('main-content');
 
+
+
 let weatherURL = "../greenville-weather/weather.json";
 function fetchData(weatherURL){
   let cityName = 'Greenville'; // The data we want from the weather.json file
@@ -71,7 +73,7 @@ function fetchData(weatherURL){
 
     // When this is done the title should look something like this:
     // Greenville, SC | The Weather Site
-console.log("working");
+
     // Set the Location information
     // Get the h1 to display the city location
     // The h1 in main h1 should now say "Greenville, SC"
@@ -80,10 +82,19 @@ console.log("working");
     // Feet to meters, to display
     let feet = convertMeters(elevation);
     setElevation(feet);
-console.log('working 2');
-    // Lat and Lon
-    document.getElementById('cord').innerHTML = latitude + "&#176; " + getSign(true, latitude) + " " + longitude + "&#176; " + getSign(false, longitude);
-console.log("working 3");
+    console.log("Elevation in feet: " + feet);
+
+
+    // Lat and Lon (calculate sign and display properly)
+    signLat = getSign(true, latitude);
+    signLon = getSign(false, longitude);
+    if (latitude < 0 ) {
+      latitude *= -1;
+    }
+    if (longitude < 0) {
+      longitude *= -1;
+    }
+    document.getElementById('cord').innerHTML = latitude + "&#176; " + signLat + " " + longitude + "&#176; " + signLon;
     // Set the temperature information
     document.getElementById('high-temp').innerHTML = high + "&deg;F";
     document.getElementById('low-temp').innerHTML = low + "&deg;F";
@@ -96,10 +107,12 @@ console.log("working 3");
     document.getElementById('direction').innerHTML = "<strong>Direction: </strong>" + windDirection + "</p>";
     document.getElementById('gusts').innerHTML = "<strong>Gusts: </strong>" + gusts + "</p>";
     windDial(windDirection);
+    console.log("Wind Direction: " + windDirection);
 
     // Set the current conditions information
     const sendCondition = getCondition(conditions);
     changeSummaryImage(sendCondition);
+    console.log("Weather Condition :" + sendCondition);
 
         // Set the hourly temperature information //
     // Setting the nextHour to currentHour + 1

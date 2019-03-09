@@ -121,7 +121,9 @@ function getCondition(statement) {
               statement == 'dumping buckets' || 
               statement == 'rain' || 
               statement == 'precipitation' || 
-              statement == 'high precipitation' || 
+              statement == 'high precipitation' ||
+              statement == 'thunderstorm' ||
+              statement == 'thunderstorms' ||
               statement == 'wet weather'){
  // Condition change
       condition = 'rain';
