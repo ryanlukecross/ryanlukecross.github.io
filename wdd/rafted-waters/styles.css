@@ -67,7 +67,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #C1CAFB;
     font-family: Lora, "Arial Black", sans-serif;
     font-size: 2.5em;
-    text-align: center;
     padding: 10px;
     border: 0;
 } 
@@ -99,19 +98,18 @@ p {
 .home-headline-1 {
   display: grid;
   grid-column: 1/6;
-  align-self: center;
 }
 
 .home-headline-2 {
   display: grid;
   grid-column: 1/6;
-  align-self: center;
 }
 
 .home-headline-3 {
   display: grid;
   grid-column: 1/6;
   align-self: center;
+  text-align: center;
 }
 
 
