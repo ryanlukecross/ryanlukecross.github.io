@@ -83,7 +83,7 @@ p {
  padding-left: 20px;
  padding-right: 20px;
  grid-template-columns: 400px 520px;
- grid-template-rows: 125px 600px 125px 600px 125px 600px;
+ grid-template-rows: 125px 600px 125px 600px 125px 600px 20px;
 }
 
 .home-headline-1 {
