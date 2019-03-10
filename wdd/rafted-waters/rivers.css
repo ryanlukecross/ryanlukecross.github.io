@@ -86,7 +86,7 @@ p {
  display: grid;
  padding-left: 20px;
  padding-right: 20px;
- grid-template-columns: 520px 400px;
+ grid-template-columns: 720px;
  grid-template-rows: 125px 300px 125px 300px 125px 300px 125px 300px;
 }
 
@@ -109,8 +109,7 @@ h1 {
 }
 
 .home-paragraph-1 {
-  display: grid;
-  grid-row: 2/3;
+  display: inline-block;
  }
 
 .home-headline-2 {
@@ -177,7 +176,5 @@ h1 {
 
 #opener img {
   width: 800px;
-  align-self: center;
-  justify-content: center;
-  align-items: middle;
+  margin-left: 80px;
 }
