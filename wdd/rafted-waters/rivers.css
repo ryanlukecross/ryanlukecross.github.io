@@ -59,6 +59,10 @@ header img {
    padding: 0em;
  }
 
+ header a {
+  color: #3B3337;
+}
+
  h1, h2, h3, h4, h5, h6 {
    background-color: #3B3337;
    color: #C1CAFB;
