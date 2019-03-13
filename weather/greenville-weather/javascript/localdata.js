@@ -113,6 +113,7 @@ function fetchData(weatherURL){
     const sendCondition = getCondition(conditions);
     changeSummaryImage(sendCondition);
     console.log("Weather Condition :" + sendCondition);
+    document.getElementById('loll').innerHTML = conditions;
 
         // Set the hourly temperature information //
     // Setting the nextHour to currentHour + 1
