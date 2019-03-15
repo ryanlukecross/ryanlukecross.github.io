@@ -6,65 +6,7 @@
    <title>Find My Missionary</title>
    <link rel="stylesheet" href="style.css">
 
-   <style>
-      form {
-  /* Just to center the form on the page */
-  margin: 0 auto;
-  width: 400px;
-  /* To see the outline of the form */
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-}
 
-form div + div {
-  margin-top: 1em;
-}
-
-label {
-  /* To make sure that all labels have the same size and are properly aligned */
-  display: inline-block;
-  width: 90px;
-  text-align: right;
-}
-
-input, textarea {
-  /* To make sure that all text fields have the same font settings
-     By default, textareas have a monospace font */
-  font: 1em sans-serif;
-
-  /* To give the same size to all text fields */
-  width: 300px;
-  box-sizing: border-box;
-
-  /* To harmonize the look & feel of text field border */
-  border: 1px solid #999;
-}
-
-input:focus, textarea:focus {
-  /* To give a little highlight on active elements */
-  border-color: #000;
-}
-
-textarea {
-  /* To properly align multiline text fields with their labels */
-  vertical-align: top;
-
-  /* To give enough room to type some text */
-  height: 5em;
-}
-
-.button {
-  /* To position the buttons to the same position of the text fields */
-  padding-left: 10px; /* same size as the label elements */
-}
-
-button {
-  /* This extra margin represent roughly the same space as the space
-     between the labels and their text fields */
-    margin-left: .5em;
-}
-</style>
 
 </head>
 
@@ -84,53 +26,18 @@ button {
    </header>
 
    <main>
-      <section id='login-selection'>
-         <h1>Enter your login information below: </h1>
-      </section>
+      <h1 id='login-header'>Login</h1>
       <form action="#" method="post">
          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="user_name" required='required'>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required='required'>
          </div>
          <div>
-            <label for="mail">E-mail</label>
-            <input type="email" name="mail" id="user_mail">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
          </div>
-         <div>
-            <label for="cell">Cell Phone</label>
-            <input type="tel" name="cell" id="user_cell">
-         </div>
-         <div>
-            <label for="message">Message</label>
-            <input type="email" name="mail" id="user_mail">
-         </div>
-         <div>
-            <button type='submit'>Submit</button>
-         </div>
-         <div>
-            <label for="gender">What is your gender?</label>
-            <input type="radio" name="gender" value='Mrs' required='required'>Mrs
-            <input type="radio" name="gender" value='Mr'>Mr
-            <input type="radio" name="gender" value='Ms'>Ms
-         </div>
-         <div>
-            <input type='checkbox' name='interested1' value='newsletter' required='required'>Sign up for our newsletter
-            <input type="checkbox" name="interested1" value='emails'>Sign up for our email list
-            <input type="checkbox" name='interested1' value='texts'>Sign up for our text list
-         </div>
-         <div>
-            <label for="hear">Hear</label>
-            <select name="hear" id="hear">
-               <option value="friends">Through Friends</option>
-               <option value="radio">Through Radio</option>
-               <option value="newspaper">Newspaper Advertisement</option>
-            </select>
-         </div>
-         <div>
-            <input type="date">
-         </div>
-         <input type="color">
       </form>
+      <h2><a href="sign-up.html">Not already in the system? Sign up!</a></h2>
    </main>
 
    <footer>
