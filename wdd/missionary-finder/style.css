@@ -35,3 +35,10 @@ ul {
 #links a:visited {
    color: seagreen;
 }
+
+footer {
+   width: 100%;
+}
+footer a {
+   text-decoration: none;
+}
