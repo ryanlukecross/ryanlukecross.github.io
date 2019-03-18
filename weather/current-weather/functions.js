@@ -128,3 +128,6 @@ function getWeather(stationId) {
     }) 
    .catch(error => console.log('There was a getWeather error: ', error)) 
   } // end getWeather function
+
+
+  
