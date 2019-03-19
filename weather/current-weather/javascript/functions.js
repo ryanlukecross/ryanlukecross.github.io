@@ -4,6 +4,18 @@
 // Making sure the JS file is working //
 console.log('My JS is being Read.');
 
+console.log('Header and Storage starting from functions.js');
+
+// Set global variable for custom header required by NWS API
+var idHeader = {
+   headers: {
+      "User-Agent": "Student Learning Project - cro16052@byui.edu"
+   }
+};
+
+// Setup localStorage
+var storage = window.localStorage;
+
 
 
 // busDriver is going to call all of my other functions and run all my test cases.

@@ -1,18 +1,17 @@
 // For the sandbox folder
 'use strict';
 
-// Set global variable for custom header required by NWS API
-var idHeader = {
-   headers: {
-      "User-Agent": "Student Learning Project - cro16052@byui.edu"
-   }
-};
+// // Set global variable for custom header required by NWS API
+// var idHeader = {
+//    headers: {
+//       "User-Agent": "Student Learning Project - cro16052@byui.edu"
+//    }
+// };
 
+// // Setup localStorage
+// var storage = window.localStorage;
 
 console.log("Sandbox loctest.js is being read");
-
-// Setup localStorage
-var storage = window.localStorage;
 
 // Gets longitude and latitude of current location
 function getGeoLocation() {
