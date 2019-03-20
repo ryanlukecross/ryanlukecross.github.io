@@ -4,7 +4,7 @@
 // Making sure the JS file is working //
 console.log('My JS is being Read.');
 
-console.log('Header and Storage starting from functions.js');
+// console.log('Header and Storage starting from functions.js');
 
 // Set global variable for custom header required by NWS API
 var idHeader = {
@@ -36,9 +36,9 @@ function busDriver() {
    // Calling to convertMeters function
    let meters = 1514.246;
 
-   console.log("Meters: " + meters);
+   // console.log("Meters: " + meters);
    let feet = convertMeters(meters);
-   console.log("Feet: " + feet);
+   // console.log("Feet: " + feet);
 
    // Changing the innerHTML of the elevation ID for its paragraph tag
    setElevation(feet);
@@ -64,7 +64,7 @@ busDriver();
 //       ... do something with the JavaScript object ...
 //    })
 //    .catch(function(error){
-//    console.log('There was a fetch problem: ', error.message);
+//    // console.log('There was a fetch problem: ', error.message);
 //  })
 
 
@@ -81,50 +81,50 @@ function windDial(direction) {
       case "North":
       case "N":
          dial.setAttribute("class", "n");
-         console.log('Wind Pointer Set to North.');
+         // console.log('Wind Pointer Set to North.');
          break;
       case "NE":
       case "NNE":
       case "ENE":
          dial.setAttribute("class", "ne");
-         console.log('Wind Pointer Set to North East.');
+         // console.log('Wind Pointer Set to North East.');
          break;
       case "NW":
       case "NNW":
       case "WNW":
          dial.setAttribute("class", "nw");
-         console.log('Wind Pointer Set to North West.');
+         // console.log('Wind Pointer Set to North West.');
          break;
       case "South":
       case "S":
          dial.setAttribute("class", "s");
-         console.log('Wind Pointer Set to South.');
+         // console.log('Wind Pointer Set to South.');
          break;
       case "SE":
       case "SSE":
       case "ESE":
          dial.setAttribute("class", "se");
-         console.log('Wind Pointer Set to South East.');
+         // console.log('Wind Pointer Set to South East.');
          break;
       case "SW":
       case "SSW":
       case "WSW":
          dial.setAttribute("class", "sw");
-         console.log('Wind Pointer Set to South West');
+         // console.log('Wind Pointer Set to South West');
          break;
       case "East":
       case "E":
          dial.setAttribute('class', "e");
-         console.log('Wind Pointer Set to East.');
+         // console.log('Wind Pointer Set to East.');
          break;
       case "West":
       case "W":
-         console.log("made it")
+         // console.log("made it")
          dial.setAttribute("class", "w");
-         console.log('Wind Pointer Set to West.');
+         // console.log('Wind Pointer Set to West.');
          break;
       default:
-         console.log("Nothing Worked... direction: " + direction);
+         // console.log("Nothing Worked... direction: " + direction);
    }
 }
 
@@ -135,11 +135,11 @@ function buildWC(speed, temp) {
    const feelTemp = document.getElementById('feels');
    // do fancy maths
    let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
-   console.log(wc);
+   // console.log(wc);
    wc = Math.floor(wc);
    // determine the smallest temperature for the tinal result
    wc = (wc > temp) ? temp : wc;
-   console.log(wc);
+   // console.log(wc);
    // change the HTML of 'feels' (const created earlier as feelTemp)
    feelTemp.innerHTML = wc;
 }
@@ -150,7 +150,7 @@ function buildWC(speed, temp) {
 function getCondition(statement) {
    // Make them all lower case //
    statement = statement.toLowerCase();
-   console.log("statement passed to getCondition() is: " + statement);
+   // console.log("statement passed to getCondition() is: " + statement);
    // create an empty condition (I still don't get why let is preferred over var)
    let condition = "";
 
@@ -161,7 +161,7 @@ function getCondition(statement) {
       statement == 'gloomy') {
       // Condition change
       condition = 'clouds';
-      console.log("Condition is: " + condition);
+      // console.log("Condition is: " + condition);
       return condition;
    } else if (statement == 'snow' ||
       statement == 'snowy' ||
@@ -169,7 +169,7 @@ function getCondition(statement) {
       statement == 'flurries') {
       // Condition change
       condition = 'snow';
-      console.log("Condition is: " + condition);
+      // console.log("Condition is: " + condition);
       return condition;
    } else if (statement == 'foggy' ||
       statement == 'low visibility' ||
@@ -178,7 +178,7 @@ function getCondition(statement) {
       statement == 'hazey') {
       // Condition change
       condition = 'fog';
-      console.log("Condition is: " + condition);
+      // console.log("Condition is: " + condition);
       return condition;
    } else if (statement == 'pouring' ||
       statement == 'raining' ||
@@ -190,11 +190,11 @@ function getCondition(statement) {
       statement == 'wet weather') {
       // Condition change
       condition = 'rain';
-      console.log("Condition is: " + condition);
+      // console.log("Condition is: " + condition);
       return condition;
    } else {
       condition = 'clear';
-      console.log("Condition is: " + condition);
+      // console.log("Condition is: " + condition);
       return condition;
    }
 }
@@ -248,11 +248,15 @@ function buildHourlyData(nextHour, hourlyTemps) {
    for (let i = 1, x = hourlyTemps.length; i < x; i++) {
       hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
    }
-   console.log('HourlyList is: ' + hourlyListItems);
+   // console.log('HourlyList is: ' + hourlyListItems);
    return hourlyListItems;
 }
 
-/*                                                                 Locations Functions Below!!                                                               */
+/* ---------------------------------------------------------------- Locations Functions Below!! ------------------------------------------------------------ */
+
+let statusContainer = document.getElementById('status');
+let contentContainer = document.getElementById('main-content');
+
 
 // Gets location information from the NWS API
 function getLocation(locale) {
@@ -272,6 +276,10 @@ function getLocation(locale) {
          // Store data to localstorage 
          storage.setItem("locName", data.properties.relativeLocation.properties.city);
          storage.setItem("locState", data.properties.relativeLocation.properties.state);
+
+         
+         let fullName = locName+', '+locState;
+         storage.setItem("locFullName", fullName);
 
          // Next, get the weather station ID before requesting current conditions 
          // URL for station list is in the data object 
@@ -327,15 +335,106 @@ function getWeather(stationId) {
          throw new ERROR('Response not OK.');
       })
       .then(function (data) {
+         // Are we done yet? No
+         let finished = false;
          // Let's see what we got back
          console.log('From getWeather function:');
          console.log(data);
+  // ************ Get the content ******************************
 
-         // Store weather information to localStorage 
+    // Get Latitude, Longitude, and Elevation
+    let latitude = g.Latitude;
+    let longitude = g.Longitude;
+    let elevation = g.Elevation;
+/*
+    // Get the temperature data
+    let temp = g.Temp;
+    let high = g.High;
+    let low = g.Low;
+    console.log("Temp: " + temp + " High : " + high + " Low: " + low);
+    
+    // Get the wind data 
+    let windDirection = g.Direction;
+    let windSpeed = g.Wind;
+    let gusts = g.Gusts;
+    console.log("Wind Speed: " + windSpeed + " Direction: " + windDirection + " Gusts: " + gusts);
+
+    // Get the current conditions
+    let precip = g.Precip;
+    let conditions = g.Summary;
+    console.log("Precipitation: " + precip + " Weather Conditions: " + conditions);
+
+    // Get the hourly data 
+    let hourlyData = g.Hourly;
+    console.log(hourlyData);
+
+    // ************ Display the content ******************************
+    // Set the title with the location name at the first
+    // Gets the title element so it can be worked with
+    let pageTitle = document.getElementById('page-title');
+    // Create a text node containing the full name 
+    let fullNameNode = document.createTextNode(fullName);
+    // inserts the fullName value before any other content that might exist
+    pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
+
+    // When this is done the title should look something like this:
+    // Greenville, SC | The Weather Site
+
+    // Set the Location information
+    // Get the h1 to display the city location
+    // The h1 in main h1 should now say "Greenville, SC"
+    document.getElementById('nameofcity').innerHTML = fullName;
+
+    // Feet to meters, to display
+    let feet = convertMeters(elevation);
+    setElevation(feet);
+    console.log("Elevation in feet: " + feet);
 
 
-         // Build the page for viewing 
+    // Lat and Lon (calculate sign and display properly)
+    signLat = getSign(true, latitude);
+    signLon = getSign(false, longitude);
+    if (latitude < 0 ) {
+      latitude *= -1;
+    }
+    if (longitude < 0) {
+      longitude *= -1;
+    }
+    document.getElementById('cord').innerHTML = latitude + "&#176; " + signLat + " " + longitude + "&#176; " + signLon;
+    // Set the temperature information
+    document.getElementById('high-temp').innerHTML = high + "&deg;F";
+    document.getElementById('low-temp').innerHTML = low + "&deg;F";
+    document.getElementById('realtemp').innerHTML = temp;
+    buildWC(windSpeed, temp);
+    console.log("ws = " + windSpeed + " temp = " + temp);
 
+    // Set the wind information
+    document.getElementById('mph').innerHTML = windSpeed + " mph";
+    document.getElementById('direction').innerHTML = "<strong>Direction: </strong>" + windDirection + "</p>";
+    document.getElementById('gusts').innerHTML = "<strong>Gusts: </strong>" + gusts + "</p>";
+    windDial(windDirection);
+    console.log("Wind Direction: " + windDirection);
+
+    // Set the current conditions information
+    const sendCondition = getCondition(conditions);
+    changeSummaryImage(sendCondition);
+    console.log("Weather Condition :" + sendCondition);
+    document.getElementById('loll').innerHTML = conditions;
+
+        // Set the hourly temperature information //
+    // Setting the nextHour to currentHour + 1
+    let date = new Date(); 
+    let nextHour = date.getHours() + 1; 
+    
+    finished = true;
+
+    */
+   
+         if (finished)
+         {
+            statusContainer.innerHTML = '';
+            contentContainer.setAttribute('class', '');
+         }
       })
       .catch(error => console.log('There was a getWeather error: ', error))
 } // end getWeather function
