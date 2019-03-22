@@ -30,8 +30,12 @@ function getGeoLocation() {
          console.log("Calling getLocation() from getGeoLocation()");
          getLocation(locale);
 
+         storage.setItem('geoLat', lat);
+         storage.setItem('geoLon', long);
+
 
       })
+
    } else {
       status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
    } // end else

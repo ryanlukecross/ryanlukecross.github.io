@@ -16,59 +16,6 @@ var idHeader = {
 // Setup localStorage
 var storage = window.localStorage;
 
-
-
-// busDriver is going to call all of my other functions and run all my test cases.
-// Not of crazy significance, but it will help me debug it all out.
-function busDriver() {
-   // Get the condition and change the image //
-   const condition = getCondition("snowy");
-   changeSummaryImage(condition);
-
-   // testing the buildWC function with temp and speed variables created //
-   const temp = 31;
-   const speed = 5;
-   buildWC(speed, temp);
-
-   // Calling the windDial function to test weather the dial accurately changes.
-   windDial('e');
-
-   // Calling to convertMeters function
-   let meters = 1514.246;
-
-   // console.log("Meters: " + meters);
-   let feet = convertMeters(meters);
-   // console.log("Feet: " + feet);
-
-   // Changing the innerHTML of the elevation ID for its paragraph tag
-   setElevation(feet);
-
-   // Setting the nextHour to currentHour + 1
-   let date = new Date();
-   let nextHour = date.getHours() + 1;
-}
-
-// Calls the busDriver()
-busDriver();
-
-
-// // FETCH API
-// fetch(URL)
-//    .then(function(response) {
-//       if(response.ok){
-//       return response.json();
-//       }
-//       throw new ERROR('Network response was not OK.');
-//    })
-//    .then(function(data){
-//       ... do something with the JavaScript object ...
-//    })
-//    .catch(function(error){
-//    // console.log('There was a fetch problem: ', error.message);
-//  })
-
-
-
 // windDial is what will set the addribute of the dial class //
 function windDial(direction) {
    // get the dial class
@@ -131,15 +78,17 @@ function windDial(direction) {
 // buildWC will just build the wind chill factor and change the innerHTML
 // console.log will help debug if needed
 function buildWC(speed, temp) {
+   console.log("Speed: " + speed + " Temp: " + temp);
    // get the id of the element
    const feelTemp = document.getElementById('feels');
    // do fancy maths
    let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
    // console.log(wc);
+   console.log("Wind Chill 1: " + wc);
    wc = Math.floor(wc);
    // determine the smallest temperature for the tinal result
    wc = (wc > temp) ? temp : wc;
-   // console.log(wc);
+    console.log("WIND CHILL: " + wc);
    // change the HTML of 'feels' (const created earlier as feelTemp)
    feelTemp.innerHTML = wc;
 }
@@ -158,6 +107,7 @@ function getCondition(statement) {
    // switch statements
    if (statement == 'cloudy' ||
       statement == 'overcast' ||
+      statement == 'mostly cloudy' ||
       statement == 'gloomy') {
       // Condition change
       condition = 'clouds';
@@ -276,13 +226,16 @@ function getLocation(locale) {
          // Store data to localstorage 
          storage.setItem("locName", data.properties.relativeLocation.properties.city);
          storage.setItem("locState", data.properties.relativeLocation.properties.state);
-
+         // Yn3ypsoRugytpYooDNI7fUIXnsZB1ciuxPmmmssPnxLRFRFIIlQqBVE9erEaQ6Y1
+         // let zipKey = "Yn3ypsoRugytpYooDNI7fUIXnsZB1ciuxPmmmssPnxLRFRFIIlQqBVE9erEaQ6Y1";
+         // let zipURL = 'https://www.zipcodeapi.com/rest/' + zipKey + '/city-zips. json /' + storage.getItem('locName') + '/' + storage.getItem('locState');
+         // getZip(zipURL);
 
          let fullName = storage.getItem('locName') + ', ' + storage.getItem('locState');
          storage.setItem("locFullName", fullName);
 
-         let hourlyURL = data.properties.forecastHourly;
-         getHourly(hourlyURL);
+         let blah = data.properties.forecastHourly;
+         getHourly(blah);
          let forecastURL = data.properties.forecast;
          getForecast(forecastURL);
          // Next, get the weather station ID before requesting current conditions 
@@ -294,9 +247,7 @@ function getLocation(locale) {
       .catch(error => console.log('There was a getLocation error: ', error))
 } // end getLocation function
 
-// the getStationId() function
-
-// Gets weather station list and the nearest weather station ID from the NWS API
+// the getStationId() function gets weather station list and the nearest weather station ID from the NWS API
 function getStationId(stationsURL) {
    // NWS User-Agent header (built above) will be the second parameter 
    fetch(stationsURL, idHeader)
@@ -353,8 +304,8 @@ function getWeather(stationId) {
          // ************ Get the content ******************************
 
          // storage - text description
-         
-         storage.setItem('weatherDescription', )
+
+         storage.setItem('textDescription', data.properties.textDescription);
 
          if (finished) {
             statusContainer.innerHTML = '';
@@ -389,7 +340,7 @@ function getHourly(hourlyURL) {
          // wind direction, wind speed, current temperature, hourly - set to storage
 
          storage.setItem('windDirection', data.properties.periods[0].windDirection);
-         storage.setItem('windSpeed', data.properties.periods[0].windSpeed);
+         storage.setItem('windSpeed', parseFloat(data.properties.periods[0].windSpeed));
          storage.setItem('tempCurrent', data.properties.periods[0].temperature);
          storage.setItem('tempHourly', hourly);
 
@@ -423,5 +374,170 @@ function getForecast(URL) {
 
 
 function buildPage() {
-   return;
+
+   // ************ Display the content ******************************
+
+   // // Set the page title to your current location's city and state
+      let pageTitle = document.getElementById('page-title');
+      let fullName = storage.getItem('locFullName');
+      
+   // // Create a text node containing the full name 
+      let fullNameNode = document.createTextNode(fullName);
+   // // inserts the fullName value before any other content that might exist
+      pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
+
+
+   // Set the Location information
+   // Get the h1 to display the city location
+   // The h1 in main h1 should now say "Greenville, SC"
+   document.getElementById('nameofcity').innerHTML = storage.getItem('locFullName');
+
+   // Feet to meters, to display
+   let feet = convertMeters(storage.getItem('stationElevation'));
+   setElevation(feet);
+   console.log("buildPage - Elevation in feet: " + feet);
+
+   // Lat and Lon (calculate sign and display properly)
+   let latitude = storage.getItem('geoLat');
+   let longitude = storage.getItem('geoLon');
+   signLat = getSign(true, latitude);
+   signLon = getSign(false, longitude);
+   if (latitude < 0) {
+      latitude *= -1;
+   }
+   if (longitude < 0) {
+      longitude *= -1;
+   }
+   document.getElementById('cord').innerHTML = latitude + "&#176; " + signLat + " " + longitude + "&#176; " + signLon;
+
+   // Set the temperature information
+   document.getElementById('high-temp').innerHTML = storage.getItem('tempHigh') + "&deg;F";
+   document.getElementById('low-temp').innerHTML = storage.getItem('tempLow') + "&deg;F";
+   document.getElementById('realtemp').innerHTML = storage.getItem('tempCurrent');
+   buildWC(storage.getItem('windSpeed'), storage.getItem('tempCurrent'));
+   console.log("buildPage - Windspeed and Temperature set (also called the buildWindChill() function)");
+
+   // Set the wind information
+   document.getElementById('mph').innerHTML = storage.getItem('windSpeed') + " mph";
+   document.getElementById('direction').innerHTML = "<strong>Direction: </strong>" + storage.getItem('windDirection') + "</p>";
+   document.getElementById('gusts').innerHTML = 
+      "<strong>Gusts: </strong>" + (parseFloat(storage.getItem("windGusts")) > storage.getItem('windSpeed') ? parseFloat(storage.getItem("windGusts")) : storage.getItem('windSpeed'))  + " mph</p>";
+   windDial(storage.getItem('windDirection'));
+   console.log("Wind Direction: " + storage.getItem('windDirection'));
+
+   // Set the current conditions information
+   const sendCondition = getCondition(storage.getItem('textDescription'));
+   changeSummaryImage(sendCondition);
+   console.log("Weather Condition :" + sendCondition);
+   document.getElementById('loll').innerHTML = storage.getItem('textDescription');
+
+   // Set the hourly temperature information //
+   // Setting the nextHour to currentHour + 1
+   let date = new Date();
+   let nextHour = date.getHours() + 1;
+
+   document.getElementById('hourly-info').innerHTML = buildHourlyData(nextHour, storage.getItem('tempHourly').split(','));
+
+   // Removes the class of hide from main-content
+   document.getElementById('main-content').setAttribute('class', '');
+   document.getElementById('status').setAttribute('class', 'hide');
 }
+
+buildPage();
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+   // changeSummaryImage() will simply change the element 'content' to have the
+   // class of whatever weather factor we can determine using the getCondition()
+   // function.
+function changeSummaryImage(condition) {
+   document.getElementById('content').setAttribute("class", condition);
+   document.getElementById('weather-picture').setAttribute("src", "images/" + condition + "-small.jpg");
+   document.getElementById('weather-picture').setAttribute("alt", condition + " weather condition image");
+   return 0;
+}
+
+// convertMeters() will take meters and turn them to feet and return an integer.
+function convertMeters(meters) {
+   let feet = meters * 3.28084;
+   feet = Math.round(feet);
+   return feet;
+}
+
+// setElevation is going to change the elevation to feet from meters
+function setElevation(feet) {
+   document.getElementById('elevation').innerHTML = feet;
+}
+
+// Convert, Format time to 12 hour format
+function format_time(hour) {
+   if(hour > 23){ 
+    hour -= 24; 
+   } 
+   let amPM = (hour > 11) ? "pm" : "am"; 
+   if(hour > 12) { 
+    hour -= 12; 
+   } 
+   if(hour == 0) { 
+    hour = "12"; 
+   } 
+   return hour + amPM;
+  }
+
+   function getSign(isLat, num){
+      if (num > 0){
+         if(isLat == true){
+            return 'N';
+         } else {
+            return 'E';
+         }
+      } else {
+         if(isLat == true) { 
+            return 'S';
+         } else {
+            return 'W';
+         }
+      }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    // Gets location information from the NWS API
+// function getZip(URL) {
+//    // NWS User-Agent header (built above) will be the second parameter 
+//    fetch(URL)
+//       .then(function (response) {
+//          if (response.ok) {
+//             return response.json();
+//          }
+//          throw new ERROR('Response not OK.');
+//       })
+//       .then(function (data) {
+//          // Let's see what we got back
+//          console.log('getZip object:');
+//          console.log(data);
+      
+
+
+//       })
+//       .catch(error => console.log('There was a getZip error: ', error))
+// } // end getZip function
