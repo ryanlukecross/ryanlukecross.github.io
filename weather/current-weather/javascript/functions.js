@@ -88,7 +88,7 @@ function buildWC(speed, temp) {
    wc = Math.floor(wc);
    // determine the smallest temperature for the tinal result
    wc = (wc > temp) ? temp : wc;
-    console.log("WIND CHILL: " + wc);
+   console.log("WIND CHILL: " + wc);
    // change the HTML of 'feels' (const created earlier as feelTemp)
    feelTemp.innerHTML = wc;
 }
@@ -378,13 +378,13 @@ function buildPage() {
    // ************ Display the content ******************************
 
    // // Set the page title to your current location's city and state
-      let pageTitle = document.getElementById('page-title');
-      let fullName = storage.getItem('locFullName');
-      
+   let pageTitle = document.getElementById('page-title');
+   let fullName = storage.getItem('locFullName');
+
    // // Create a text node containing the full name 
-      let fullNameNode = document.createTextNode(fullName);
+   let fullNameNode = document.createTextNode(fullName);
    // // inserts the fullName value before any other content that might exist
-      pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
+   pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
 
 
    // Set the Location information
@@ -420,8 +420,8 @@ function buildPage() {
    // Set the wind information
    document.getElementById('mph').innerHTML = storage.getItem('windSpeed') + " mph";
    document.getElementById('direction').innerHTML = "<strong>Direction: </strong>" + storage.getItem('windDirection') + "</p>";
-   document.getElementById('gusts').innerHTML = 
-      "<strong>Gusts: </strong>" + (parseFloat(storage.getItem("windGusts")) > storage.getItem('windSpeed') ? parseFloat(storage.getItem("windGusts")) : storage.getItem('windSpeed'))  + " mph</p>";
+   document.getElementById('gusts').innerHTML =
+      "<strong>Gusts: </strong>" + (parseFloat(storage.getItem("windGusts")) > storage.getItem('windSpeed') ? parseFloat(storage.getItem("windGusts")) : storage.getItem('windSpeed')) + " mph</p>";
    windDial(storage.getItem('windDirection'));
    console.log("Wind Direction: " + storage.getItem('windDirection'));
 
@@ -437,10 +437,6 @@ function buildPage() {
    let nextHour = date.getHours() + 1;
 
    document.getElementById('hourly-info').innerHTML = buildHourlyData(nextHour, storage.getItem('tempHourly').split(','));
-
-   // Removes the class of hide from main-content
-   document.getElementById('main-content').setAttribute('class', '');
-   document.getElementById('status').setAttribute('class', 'hide');
 }
 
 buildPage();
@@ -451,9 +447,9 @@ buildPage();
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-   // changeSummaryImage() will simply change the element 'content' to have the
-   // class of whatever weather factor we can determine using the getCondition()
-   // function.
+// changeSummaryImage() will simply change the element 'content' to have the
+// class of whatever weather factor we can determine using the getCondition()
+// function.
 function changeSummaryImage(condition) {
    document.getElementById('content').setAttribute("class", condition);
    document.getElementById('weather-picture').setAttribute("src", "images/" + condition + "-small.jpg");
@@ -475,38 +471,34 @@ function setElevation(feet) {
 
 // Convert, Format time to 12 hour format
 function format_time(hour) {
-   if(hour > 23){ 
-    hour -= 24; 
-   } 
-   let amPM = (hour > 11) ? "pm" : "am"; 
-   if(hour > 12) { 
-    hour -= 12; 
-   } 
-   if(hour == 0) { 
-    hour = "12"; 
-   } 
+   if (hour > 23) {
+      hour -= 24;
+   }
+   let amPM = (hour > 11) ? "pm" : "am";
+   if (hour > 12) {
+      hour -= 12;
+   }
+   if (hour == 0) {
+      hour = "12";
+   }
    return hour + amPM;
-  }
+}
 
-   function getSign(isLat, num){
-      if (num > 0){
-         if(isLat == true){
-            return 'N';
-         } else {
-            return 'E';
-         }
+function getSign(isLat, num) {
+   if (num > 0) {
+      if (isLat == true) {
+         return 'N';
       } else {
-         if(isLat == true) { 
-            return 'S';
-         } else {
-            return 'W';
-         }
+         return 'E';
+      }
+   } else {
+      if (isLat == true) {
+         return 'S';
+      } else {
+         return 'W';
       }
    }
-
-
-
-
+}
 
 
 
@@ -535,7 +527,7 @@ function format_time(hour) {
 //          // Let's see what we got back
 //          console.log('getZip object:');
 //          console.log(data);
-      
+
 
 
 //       })

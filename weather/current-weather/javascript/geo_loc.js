@@ -40,5 +40,3 @@ function getGeoLocation() {
       status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
    } // end else
 } // end getGeoLocation
-
-getGeoLocation();
