@@ -16,64 +16,6 @@ var idHeader = {
 // Setup localStorage
 var storage = window.localStorage;
 
-// windDial is what will set the addribute of the dial class //
-function windDial(direction) {
-   // get the dial class
-   const dial = document.getElementById("dial");
-   // make sure the string is in all upper case characters
-   direction = direction.toUpperCase();
-
-   // Start the switch (gross)... console.log will help debug if needed
-   switch (direction) {
-      case "North":
-      case "N":
-         dial.setAttribute("class", "n");
-         // console.log('Wind Pointer Set to North.');
-         break;
-      case "NE":
-      case "NNE":
-      case "ENE":
-         dial.setAttribute("class", "ne");
-         // console.log('Wind Pointer Set to North East.');
-         break;
-      case "NW":
-      case "NNW":
-      case "WNW":
-         dial.setAttribute("class", "nw");
-         // console.log('Wind Pointer Set to North West.');
-         break;
-      case "South":
-      case "S":
-         dial.setAttribute("class", "s");
-         // console.log('Wind Pointer Set to South.');
-         break;
-      case "SE":
-      case "SSE":
-      case "ESE":
-         dial.setAttribute("class", "se");
-         // console.log('Wind Pointer Set to South East.');
-         break;
-      case "SW":
-      case "SSW":
-      case "WSW":
-         dial.setAttribute("class", "sw");
-         // console.log('Wind Pointer Set to South West');
-         break;
-      case "East":
-      case "E":
-         dial.setAttribute('class', "e");
-         // console.log('Wind Pointer Set to East.');
-         break;
-      case "West":
-      case "W":
-         // console.log("made it")
-         dial.setAttribute("class", "w");
-         // console.log('Wind Pointer Set to West.');
-         break;
-      default:
-         // console.log("Nothing Worked... direction: " + direction);
-   }
-}
 
 // buildWC will just build the wind chill factor and change the innerHTML
 // console.log will help debug if needed
@@ -90,7 +32,9 @@ function buildWC(speed, temp) {
    wc = (wc > temp) ? temp : wc;
    console.log("WIND CHILL: " + wc);
    // change the HTML of 'feels' (const created earlier as feelTemp)
-   feelTemp.innerHTML = wc;
+   if (wc != null) {
+      feelTemp.innerHTML = wc;
+   }
 }
 
 // getCondition() will test a series of statements and determine what 
@@ -223,26 +167,38 @@ function getLocation(locale) {
          // Let's see what we got back
          console.log('getLocation object:');
          console.log(data);
-         // Store data to localstorage 
+         // Store data to localstorage
          storage.setItem("locName", data.properties.relativeLocation.properties.city);
          storage.setItem("locState", data.properties.relativeLocation.properties.state);
-         // Yn3ypsoRugytpYooDNI7fUIXnsZB1ciuxPmmmssPnxLRFRFIIlQqBVE9erEaQ6Y1
-         // let zipKey = "Yn3ypsoRugytpYooDNI7fUIXnsZB1ciuxPmmmssPnxLRFRFIIlQqBVE9erEaQ6Y1";
-         // let zipURL = 'https://www.zipcodeapi.com/rest/' + zipKey + '/city-zips. json /' + storage.getItem('locName') + '/' + storage.getItem('locState');
-         // getZip(zipURL);
+
+         // This is my API Key for the zipCodeAPI if I have time to do it: Yn3ypsoRugytpYooDNI7fUIXnsZB1ciuxPmmmssPnxLRFRFIIlQqBVE9erEaQ6Y1
 
          let fullName = storage.getItem('locName') + ', ' + storage.getItem('locState');
          storage.setItem("locFullName", fullName);
 
-         let blah = data.properties.forecastHourly;
-         getHourly(blah);
-         let forecastURL = data.properties.forecast;
-         getForecast(forecastURL);
          // Next, get the weather station ID before requesting current conditions 
          // URL for station list is in the data object 
          let stationsURL = data.properties.observationStations;
          // Call the function to get the list of weather stations
          getStationId(stationsURL);
+
+         let hourlyURL = data.properties.forecastHourly;
+         getHourly(hourlyURL);
+         let forecastURL = data.properties.forecast;
+         getForecast(forecastURL);
+
+         // Call the buildPage function
+         setTimeout(buildPage(), 5000);
+
+         // storage.setItem("reloadThing", 'Page has not been reloaded yet');
+
+         // while(storage.getItem('reloadThing') != 'Reloaded Page')
+         // {
+         //    storage.setItem('reloadThing', 'Reloaded Page');
+         //    setTimeout(location.reload(), 600);
+         //    console.log("---------------------- RELOAD ------------------");
+         // }
+
       })
       .catch(error => console.log('There was a getLocation error: ', error))
 } // end getLocation function
@@ -304,13 +260,8 @@ function getWeather(stationId) {
          // ************ Get the content ******************************
 
          // storage - text description
-
          storage.setItem('textDescription', data.properties.textDescription);
 
-         if (finished) {
-            statusContainer.innerHTML = '';
-            contentContainer.setAttribute('class', '');
-         }
       })
       .catch(error => console.log('There was a getWeather error: ', error))
 } // end getWeather function
@@ -408,7 +359,7 @@ function buildPage() {
    if (longitude < 0) {
       longitude *= -1;
    }
-   document.getElementById('cord').innerHTML = latitude + "&#176; " + signLat + " " + longitude + "&#176; " + signLon;
+   document.getElementById('cord').innerHTML = Math.floor(latitude * 100) / 100 + "&#176; " + signLat + " " + Math.floor(longitude * 100) / 100 + "&#176; " + signLon;
 
    // Set the temperature information
    document.getElementById('high-temp').innerHTML = storage.getItem('tempHigh') + "&deg;F";
@@ -422,6 +373,7 @@ function buildPage() {
    document.getElementById('direction').innerHTML = "<strong>Direction: </strong>" + storage.getItem('windDirection') + "</p>";
    document.getElementById('gusts').innerHTML =
       "<strong>Gusts: </strong>" + (parseFloat(storage.getItem("windGusts")) > storage.getItem('windSpeed') ? parseFloat(storage.getItem("windGusts")) : storage.getItem('windSpeed')) + " mph</p>";
+   console.log("WIND DIRECTION FROM functions[369] " + storage.getItem("windDirection"));
    windDial(storage.getItem('windDirection'));
    console.log("Wind Direction: " + storage.getItem('windDirection'));
 
@@ -437,9 +389,13 @@ function buildPage() {
    let nextHour = date.getHours() + 1;
 
    document.getElementById('hourly-info').innerHTML = buildHourlyData(nextHour, storage.getItem('tempHourly').split(','));
+
+   // Clear everything and make it so that it all appears on the screen
+   document.getElementById('main-content').setAttribute('class', '');
+   document.getElementById('status').setAttribute('class', 'hide');
+   console.log("This should be the last thing I see");
 }
 
-buildPage();
 
 
 
@@ -503,33 +459,61 @@ function getSign(isLat, num) {
 
 
 
+// windDial is what will set the addribute of the dial class //
+function windDial(direction) {
+   // get the dial class
+   const dial = document.getElementById("dial");
+   // make sure the string is in all upper case characters
+   direction = direction.toUpperCase();
 
-
-
-
-
-
-
-
-
-
-//    // Gets location information from the NWS API
-// function getZip(URL) {
-//    // NWS User-Agent header (built above) will be the second parameter 
-//    fetch(URL)
-//       .then(function (response) {
-//          if (response.ok) {
-//             return response.json();
-//          }
-//          throw new ERROR('Response not OK.');
-//       })
-//       .then(function (data) {
-//          // Let's see what we got back
-//          console.log('getZip object:');
-//          console.log(data);
-
-
-
-//       })
-//       .catch(error => console.log('There was a getZip error: ', error))
-// } // end getZip function
+   // Start the switch (gross)... console.log will help debug if needed
+   switch (direction) {
+      case "North":
+      case "N":
+         dial.setAttribute("class", "n");
+         // console.log('Wind Pointer Set to North.');
+         break;
+      case "NE":
+      case "NNE":
+      case "ENE":
+         dial.setAttribute("class", "ne");
+         // console.log('Wind Pointer Set to North East.');
+         break;
+      case "NW":
+      case "NNW":
+      case "WNW":
+         dial.setAttribute("class", "nw");
+         // console.log('Wind Pointer Set to North West.');
+         break;
+      case "South":
+      case "S":
+         dial.setAttribute("class", "s");
+         // console.log('Wind Pointer Set to South.');
+         break;
+      case "SE":
+      case "SSE":
+      case "ESE":
+         dial.setAttribute("class", "se");
+         // console.log('Wind Pointer Set to South East.');
+         break;
+      case "SW":
+      case "SSW":
+      case "WSW":
+         dial.setAttribute("class", "sw");
+         // console.log('Wind Pointer Set to South West');
+         break;
+      case "East":
+      case "E":
+         dial.setAttribute('class', "e");
+         // console.log('Wind Pointer Set to East.');
+         break;
+      case "West":
+      case "W":
+         // console.log("made it")
+         dial.setAttribute("class", "w");
+         // console.log('Wind Pointer Set to West.');
+         break;
+      default:
+         // console.log("Nothing Worked... direction: " + direction);
+   }
+}

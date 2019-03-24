@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang='en-us'>
 
-<head>
-  <title id='page-title'> | Weather Site</title>
-  <meta charset="utf-8">
-  <meta name='viewport' content="width=device-width">
-  <meta name='author' content='Ryan Cross'>
-  <meta name='description' content='This site is for weather reports in Franklin Idaho'>
-  <link rel="stylesheet" href="/weather/greenville-weather/css/style.css" media='screen'>
+<head id='head'>
+
+  
+  <script>
+    var storage = window.localStorage;
+    var tom = storage.getItem('trick');
+  if(tom == '3'){
+    document.getElementById('head').innerHTML = 
+    '<title id="page-title"> | Weather Site</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width"> <meta name="author" content="Ryan Cross"> <meta name="description"> content="This site is for weather reports in Franklin Idaho"> <link rel="stylesheet" href="/weather/greenville-weather/css/style.css" media="screen"> <link rel="shortcut icon" href="#"/> <link rel="icon" href="#"> <link rel="favicon" href="#">';
+  }
+  else {
+    document.getElementById('head').innerHTML = 
+    '<title id="page-title"> | Weather Site</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width"> <meta name="author" content="Ryan Cross"> <meta name="description"> content="This site is for weather reports in Franklin Idaho"> <link rel="stylesheet" href="/weather/greenville-weather/css/style.css" media="screen"> <link rel="shortcut icon" href="#"/> <link rel="icon" href="#"> <link rel="favicon" href="#"> <meta http-equiv="refresh" content=".1;url=startup-page.html"/>';
+  }
+
+  </script>
+
+  
 </head>
 
 <body>
@@ -22,13 +33,13 @@
     <a href="greenville-weather/greenville-weather.html">Greenville</a>
   </nav>
 
-  <section id="status">Please be patient while I get your weather information.</section>
+  <section id="status">Please be patient while I get your weather information. <p>Getting location...</p></section>
 
   <main id='main-content' class='hide'>
     <section id="heading">
       <h2 id='nameofcity'>Change</h2>
 
-      <span id='elev'><strong>Zip: </strong><span id='zipcode'></span> |&nbsp; <strong>Elevation:&nbsp;
+      <span id='elev'><strong>Zip: </strong><span id='zipcode'>[no zip]</span> |&nbsp; <strong>Elevation:&nbsp;
         </strong></span><span id='elevation'>1514.246</span><span id='lol'> ft. |&nbsp; </span><strong>Location:
         &nbsp;</strong><span id='cord'>42.07&#176; N, 111.97&#176; W</span>
 
@@ -85,15 +96,7 @@
   </footer>
   <script src="current-weather/javascript/functions.js"></script>
   <script src="current-weather/javascript/geo_loc.js"></script>
-  <script>
-  
 
-  // while(document.getElementById('status') != '')
-  // {
-  //   setTimeout(location.reload(), 400);
-  // }
-
-</script>
 </body>
 
 </html>
