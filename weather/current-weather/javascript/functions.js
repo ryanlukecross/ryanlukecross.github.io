@@ -517,3 +517,8 @@ function windDial(direction) {
          // console.log("Nothing Worked... direction: " + direction);
    }
 }
+
+function celsiusToFahrenheit(degrees) {
+   degrees = parseFloat(degrees);
+   return (valNum-32) / 1.8;
+ }
