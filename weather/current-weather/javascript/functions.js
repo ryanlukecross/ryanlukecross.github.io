@@ -520,5 +520,5 @@ function windDial(direction) {
 
 function celsiusToFahrenheit(degrees) {
    degrees = parseFloat(degrees);
-   return (valNum-32) / 1.8;
- }
+   return (valNum - 32) / 1.8;
+}
