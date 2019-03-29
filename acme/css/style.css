@@ -1,0 +1,66 @@
+
+
+body {
+   background-image: url("/acme/images/site/background.jpg");
+   width: 100%;
+   background-size: cover;
+   background-position: 0% 0%;
+}
+
+#content {
+   background-color: white;
+}
+
+nav ul li {
+   list-style-type: none;
+   display: flex;
+   text-align: center;
+}
+
+nav ul {
+   margin: 0;
+   padding: 0;
+   width: 600px;
+   display: flex;
+   justify-content: space-between;
+   text-align: center;
+
+}
+
+nav {
+   height: 45px;
+   background-color: #DE2226;
+   text-align: center;
+}
+
+a:link {
+   display: flex;
+   text-align: center;
+   color: #FFFFFF;
+   text-decoration: none;
+   font-size: 1.5em;
+   padding: 10px 10px;
+}
+
+a:hover {
+   display: flex;
+   text-align: center;
+   color: #FFFFFF;
+   text-decoration: none;
+   font-size: 1.5em;
+   padding: 10px 10px;
+}
+
+a:visited {
+   display: flex;
+   text-align: center;
+   color: #FFFFFF;
+   text-decoration: none;
+   font-size: 1.5em;
+   padding: 10px 10px;
+}
+
+hr {
+   height: 3px;
+   background-color: black;
+}
