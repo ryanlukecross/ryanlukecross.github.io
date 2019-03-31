@@ -88,7 +88,7 @@ ul {
 }
 
 /* Large Scren Rules Going Here! */
-@media screen AND (min-width: 2000px) {
+@media screen AND (max-width: 2000px) {
   footer {
     width: 100%;
   }
@@ -125,7 +125,7 @@ ul {
   #grid-home {
     display: grid;
     grid-template-columns: 12.5% 12.5% 1fr 1fr 12.5% 12.5%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .25fr .5fr 1fr 1fr 1fr;
   }
 
   #grid-paragraph-1 {
@@ -137,15 +137,15 @@ ul {
 
   #grid-missionary {
     display: grid;
-    width: 40%;
+    width: 100%;
     grid-row: 2/3;
-    grid-column: 2/4;
+    grid-column-start: 1;
   }
 
   #grid-convert {
     display: grid;
     grid-row: 2/3;
-    grid-column-end: 6;
-    width: 40%;
+    grid-column-start: 4;
+    width: 100%;
   }
 }
