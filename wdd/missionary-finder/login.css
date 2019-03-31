@@ -4,7 +4,7 @@ body {
    border-top: 0;
    padding-left: 50px;
    padding-right: 50px;
-   background-color: #333;
+   background-color: #404042;
    color: white;
 }
 
@@ -18,7 +18,7 @@ ul {
    margin-top: 0;
    padding: 2em;
    list-style-type: none;
-   background-color: lightblue;
+   background-color: #075A96;
 }
 
 #links {
@@ -39,6 +39,8 @@ ul {
 
 h2 a {
    color: white;
+   text-decoration: none;
+   background-color: #404042;
 }
 
 
@@ -58,6 +60,7 @@ h2 a {
    .social {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
    }
 
    .space {
@@ -73,6 +76,9 @@ h2 a {
       overflow: hidden;
       justify-self: center;
       display: grid;
+      padding-top: 0;
+      margin-top: 0;
+
       grid-template-columns: 1fr;
       justify-content: center;
    }
@@ -91,34 +97,54 @@ h2 a {
       height: 90px;
    }
 
-   #grid-home {
-      display: inline;
-   }
-
-   #grid-heading-1 {
-      display: grid;
-      width: 100%;
-      grid-column: 1/6;
-   }
 
    h1,
    h2 {
       text-align: center;
    }
 
-   img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+   form {
+      display: grid;
+      grid-template-columns: repeat(5, 20%);
+      grid-template-rows: repeat(5, 22px);
    }
 
-   #grid-paragraph-1 {
-      display: grid;
-      grid-row: 2/3;
-      grid-column: 1/5;
-      width: 100%;
-      word-wrap: wrap;
+   form img {
+      height: 30px;
    }
+
+   #lock { 
+      display: grid;
+      align-self: center;
+      justify-self: right;
+      margin-right: 10px;
+      grid-row: 1/3;
+      grid-column-end: 2;
+   }
+
+   .username {
+      display: grid;
+      grid-row: 1/3;
+      grid-column-start: 2;
+   }
+
+   #key { 
+      height: 25px;
+      display: grid;
+      align-self: center;
+      justify-self: right;
+      margin-right: 10px;
+      grid-row: 4/6;
+      grid-column-end: 2;
+   }
+
+   .password {
+      display: grid; 
+      grid-row: 4/6;
+      grid-column-start: 2;
+   }
+
+
 }
 
 /* Large Scren Rules Going Here! */
