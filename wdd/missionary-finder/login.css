@@ -2,10 +2,71 @@ body {
    padding-top: 0;
    margin-top: 0;
    border-top: 0;
-   padding-left: 50px;
-   padding-right: 50px;
+   padding-left: 100px;
+   padding-right: 100px;
    background-color: #404042;
-   color: white;
+   color: #EAEADA;
+   font-size: 22px;
+}
+
+.ov {
+   overflow: hidden;
+}
+
+form {
+   display: grid;
+   grid-template-columns: repeat(6, 15%);
+   grid-template-rows: repeat(7, 22px);
+}
+
+
+#lock { 
+   height: 30px;
+   display: grid;
+   align-self: center;
+   justify-self: right;
+   margin-right: 10px;
+   grid-row: 1/3;
+   grid-column-end: 2;
+}
+
+.username {
+   display: grid;
+   width: 100%;
+   grid-row: 1/3;
+   grid-column-start: 2;
+}
+
+#key { 
+   height: 25px;
+   display: grid;
+   align-self: center;
+   justify-self: right;
+   margin-right: 10px;
+   grid-row: 4/6;
+   grid-column-end: 2;
+}
+
+.password {
+   display: grid; 
+   grid-row: 4/6;
+   grid-column-start: 2;
+}
+
+#sub {
+   width: 100%;
+   display: grid;
+   grid-row: 7/9;
+   grid-column-end: 3;
+   justify-self: right;
+}
+
+.sub {
+   width: 50%;
+}
+
+.social { 
+   float: right;
 }
 
 #logo-box {
@@ -43,11 +104,21 @@ h2 a {
    background-color: #404042;
 }
 
+footer {
+   padding-top: 80px;
+}
+
 
 
 
 /* Small Screen Rules */
-@media screen AND (max-width: 1000px) {
+@media screen AND (max-width: 1100px) {
+   body {
+      min-width: 713px;
+      font-size: 18px;
+   }
+
+
    footer {
       width: 100%;
    }
@@ -144,8 +215,23 @@ h2 a {
       grid-column-start: 2;
    }
 
+   #sub {
+      width: 100%;
+      display: grid;
+      grid-row: 7/9;
+      grid-column-end: 3;
+      justify-self: right;
+   }  
+
 
 }
 
-/* Large Scren Rules Going Here! */
-@media screen AND (max-width: 2000px) {}
+
+@media screen AND (max-width: 800px) {
+   body {
+      margin: 0;
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 14px;
+   }
+}

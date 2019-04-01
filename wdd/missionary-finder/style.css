@@ -1,11 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+
 body {
   padding-top: 0;
   margin-top: 0;
   border-top: 0;
-  padding-left: 00px;
-  padding-right: 00px;
-  background-color: #333;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #404042;
+  color: #EAEADA;
+  font-size: 22px;
+}
+
+h1, h2, h3, h4 {
   color: white;
+  font-family: "Nanum Gothic"
 }
 
 #logo-box {
@@ -18,7 +27,7 @@ ul {
   margin-top: 0;
   padding: 2em;
   list-style-type: none;
-  background-color: lightblue;
+  background-color: #075A96;
 }
 
 #links {
