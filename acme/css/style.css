@@ -1,8 +1,14 @@
 body {
    background-image: url("/acme/images/site/background.jpg");
-   width: 100%;
-   background-size: cover;
-   background-position: 0% 0%;
+   background-size: 100%;
+   background-position: left top;
+   background-repeat: no-repeat;
+   padding-right: 20px;
+   margin-left: 20px;
+}
+
+.hide {
+   display: none;
 }
 
 #content {
@@ -20,7 +26,7 @@ nav ul {
    padding: 0;
    width: 600px;
    display: flex;
-   justify-content: space-between;
+   justify-items: space-between;
    text-align: center;
 
 }
@@ -61,4 +67,6 @@ a:visited {
 hr {
    height: 3px;
    background-color: black;
+   color: black;
+   border-color: black;
 }
