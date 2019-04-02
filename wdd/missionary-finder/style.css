@@ -255,7 +255,7 @@ footer {
   }
 }
 
-/* Large Scren Rules Going Here! */
+/* Large Scren Rules Going Here!-------------------------------------------------------------------------------*/
 @media screen AND (max-width: 2000px) {
   footer {
     width: 100%;
@@ -291,6 +291,7 @@ footer {
   }
 
   #grid-home {
+    width: 100%;
     display: grid;
     grid-template-columns: 12.5% 12.5% 1fr 1fr 12.5% 12.5%;
     grid-template-rows: .25fr .5fr 1fr 1fr 1fr;
