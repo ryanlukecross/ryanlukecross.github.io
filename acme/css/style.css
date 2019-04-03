@@ -1,14 +1,32 @@
-body {
+html {
    background-image: url("/acme/images/site/background.jpg");
-   background-size: 100%;
-   background-position: left top;
    background-repeat: no-repeat;
+   height: 100%;
+   background-size: cover;
+}
+
+
+
+body {
    padding-right: 20px;
    margin-left: 20px;
+   background-color: #FFFFFF;
 }
 
 .hide {
    display: none;
+}
+
+button {
+   border: none;
+   background-color: transparent;
+   color: #FFFFFF;
+   font-family: serif;
+   font-size: 1.5em;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 #content {

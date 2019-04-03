@@ -4,25 +4,19 @@
 <head>
    <title>ACME Industries</title>
    <meta charset="utf-8">
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css" media="screen">
 </head>
 
 <body>
+   <header>
+      <img src="images/site/logo.png" alt="site logo - buy here. eat roadrunner">
+      <nav>
+         <ul id='nav-ul'>
+         </ul>
+      </nav>
+   </header>
+
    <div id='home-content'>
-      <header>
-         <img src="images/site/logo.png" alt="site logo - buy here. eat roadrunner">
-         <nav>
-            <ul id='nav-ul'>
-               <li><a href="#">Home</a></li>
-               <li><button type='button' id='anvil-button' onclick='switchAnvils()'>Click Me</button></li>
-               <li><a  href="#">Explosives</a></li>
-               <li><a href="#">Decoys</a></li>
-               <li><a href="#">Traps</a></li>
-               <li>&nbsp;</li>
-               <li>&nbsp;</li>
-            </ul>
-         </nav>
-      </header>
       <main>
          <h1>Content Title Here</h1>
       </main>
@@ -32,21 +26,8 @@
             author if any are not and they will be removed.</p>
       </footer>
    </div>
+
    <div id='anvils-content'>
-      <header>
-         <img src="images/site/logo.png" alt="site logo - buy here. eat roadrunner">
-         <nav>
-            <ul id='nav-ul'>
-               <li><a href="#">Home</a></li>
-               <li><button type='button' id='anvil-button' onclick='switchAnvils()'>Click Me</button></li>
-               <li><a href="#">Explosives</a></li>
-               <li><a href="#">Decoys</a></li>
-               <li><a href="#">Traps</a></li>
-               <li>&nbsp;</li>
-               <li>&nbsp;</li>
-            </ul>
-         </nav>
-      </header>
       <main>
          <h1>Anvils</h1>
       </main>
@@ -59,20 +40,6 @@
    </div>
 
    <div id='explosives-content'>
-      <header>
-         <img src="images/site/logo.png" alt="site logo - buy here. eat roadrunner">
-         <nav>
-            <ul id='nav-ul'>
-               <li><a href="#">Home</a></li>
-               <li><button type='button' id='anvil-button' onclick='switchAnvils()'>Click Me</button></li>
-               <li><a href="#">Explosives</a></li>
-               <li><a href="#">Decoys</a></li>
-               <li><a href="#">Traps</a></li>
-               <li>&nbsp;</li>
-               <li>&nbsp;</li>
-            </ul>
-         </nav>
-      </header>
       <main>
          <h1>Explosives</h1>
       </main>
@@ -85,20 +52,6 @@
    </div>
 
    <div id='decoys-content'>
-      <header>
-         <img src="images/site/logo.png" alt="site logo - buy here. eat roadrunner">
-         <nav>
-            <ul id='nav-ul'>
-               <li><a href="#">Home</a></li>
-               <li><button type='button' id='anvil-button' onclick='switchAnvils()'>Click Me</button></li>
-               <li><a href="#">Explosives</a></li>
-               <li><a href="#">Decoys</a></li>
-               <li><a href="#">Traps</a></li>
-               <li>&nbsp;</li>
-               <li>&nbsp;</li>
-            </ul>
-         </nav>
-      </header>
       <main>
          <h1>Decoys</h1>
       </main>
@@ -110,21 +63,6 @@
    </div>
 
    <div id='traps-content'>
-
-      <header>
-         <img src="images/site/logo.png" alt="site logo - buy here. eat roadrunner">
-         <nav>
-            <ul id='nav-ul'>
-               <li><a href="#">Home</a></li>
-               <li><button type='button' id='anvil-button' onclick='switchAnvils()'>Click Me</button></li>
-               <li><a href="#">Explosives</a></li>
-               <li><a href="#">Decoys</a></li>
-               <li><a href="#">Traps</a></li>
-               <li>&nbsp;</li>
-               <li>&nbsp;</li>
-            </ul>
-         </nav>
-      </header>
       <main>
          <h1>Traps</h1>
       </main>
@@ -135,9 +73,10 @@
       </footer>
    </div>
 
-
    <script src='js/script.js'></script>
-   <script>switchHome();</script>
+   <script>
+      switchHome();
+   </script>
 </body>
 
 </html>
