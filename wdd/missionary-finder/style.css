@@ -8,7 +8,7 @@ body {
   padding-right: 13%;
   background-color: #404042;
   color: #EAEADA;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .ov {
@@ -86,7 +86,8 @@ h4 {
 ul {
   padding: 0px;
   margin-top: 0;
-  padding: 2em;
+  margin-bottom: 0;
+  padding: 1em 1em 1em 1em;
   list-style-type: none;
   background-color: #075A96;
 }
@@ -95,16 +96,26 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0;
 }
 
 #links a {
   display: flex;
+  padding: 7px;
+  text-decoration: none;
   font-size: 1.25em;
   align-items: center;
+  color: tan;
+  text-shadow: 2px 2px black;
+}
+
+#links a:hover {
+  background-color: blue;
 }
 
 #links a:visited {
-  color: #9E2B25;
+  color: white;
+  text-decoration: none;
   /* FIX THIS */
 }
 
@@ -112,7 +123,6 @@ ul {
 h2 a {
   color: white;
   text-decoration: none;
-  background-color: #404042;
 }
 
 footer {
@@ -304,18 +314,28 @@ footer {
     width: 100%;
   }
 
-  #grid-missionary {
+  #combo {
     display: grid;
     width: 100%;
-    grid-row: 2/3;
-    grid-column-start: 1;
+    grid-column: 2/3;
+    grid-row: 1/7;
+    justify-items: space-between;
+  }
+  
+  #grid-missionary {
+    width: 40%;
   }
 
   #grid-convert {
-    display: grid;
-    grid-row: 2/3;
-    grid-column-start: 4;
-    width: 100%;
+    width: 40%;
+  }
+
+  #grid-missionary img {
+    width: 400px;
+  }
+
+  #grid-convert img {
+    width: 400px;
   }
 }
 /*
