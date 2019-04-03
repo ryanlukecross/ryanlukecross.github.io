@@ -11,6 +11,18 @@ body {
    background-color: #FFFFFF;
 }
 
+#home-rocket-div {
+   background-image: URL("/acme/images/site/feature.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 600px;
+}
+
+#home-rocket-ad {
+   z-index: 2;
+
+}
+
 .hide {
    display: none;
 }

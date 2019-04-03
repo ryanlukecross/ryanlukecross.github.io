@@ -15,7 +15,11 @@ function buildNav(URL) {
          throw new ERROR('Network response was not OK.');
       }).then(function (data) {
          let tom = data.Titles;
-         content += "<li><button type='button' id='home-button' onclick='switchHome()'>" + "Home" + "</button></li><li><button type='button' id='anvil-button' onclick='switchAnvils()'>" + tom.first + "</button></li><li><button type='button' id='explosives-button' onclick='switchExplosives()'>" + tom.second + "</button></li><li><button type='button' id='decoys-button' onclick='switchDecoys()'>" + tom.third + "</button></li><li><button type='button' id='traps-button' onclick='switchTraps()'>" + tom.fourth + "</button></li>";
+         content += "<li><button type='button' id='home-button' onclick='switch"        + "Home"     + "()'>" + "Home"     + "</button></li> " +
+                    "<li><button type='button' id='anvil-button' onclick='switch"       + tom.first  + "()'>" + tom.first  + "</button></li>" + 
+                    "<li><button type='button' id='explosives-button' onclick='switch"  + tom.first  + "()'>" + tom.second + "</button></li>" + 
+                    "<li><button type='button' id='decoys-button' onclick='switch"      + tom.first  + "()'>" + tom.third  + "</button></li>" + 
+                    "<li><button type='button' id='traps-button' onclick='switch"       + tom.first  + "()'>" + tom.fourth + "</button></li>";
          document.getElementById('nav-ul').innerHTML = content;
          console.log("The navigation bar was created by Javascript here AS: " + content);
       })
