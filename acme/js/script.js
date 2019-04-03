@@ -3,9 +3,9 @@
 console.log("script.js is being read");
 // Set the path to the JSON file and call the build nav file
 const jsonURL = '/acme/js/acme.json';
-BuildNav(jsonURL);
+buildNav(jsonURL);
 
-function BuildNav(URL) {
+function buildNav(URL) {
    let content = "";
    fetch(URL)
       .then(function (response) {
@@ -33,7 +33,7 @@ function switchHome()
    document.getElementById('decoys-content').setAttribute('class', 'hide');
    document.getElementById('traps-content').setAttribute('class', 'hide');
    document.getElementById('home-content').setAttribute('class', '');
-   BuildNav(jsonURL);
+   buildNav(jsonURL);
 }
 
 function switchAnvils()
@@ -43,7 +43,7 @@ function switchAnvils()
    document.getElementById('decoys-content').setAttribute('class', 'hide');
    document.getElementById('traps-content').setAttribute('class', 'hide');
    document.getElementById('home-content').setAttribute('class', 'hide');
-   BuildNav(jsonURL);
+   buildNav(jsonURL);
 }
 
 function switchExplosives()
@@ -53,7 +53,7 @@ function switchExplosives()
    document.getElementById('decoys-content').setAttribute('class', 'hide');
    document.getElementById('traps-content').setAttribute('class', 'hide');
    document.getElementById('home-content').setAttribute('class', 'hide');
-   BuildNav(jsonURL);
+   buildNav(jsonURL);
 }
 
 function switchDecoys()
@@ -63,7 +63,7 @@ function switchDecoys()
    document.getElementById('decoys-content').setAttribute('class', '');
    document.getElementById('traps-content').setAttribute('class', 'hide');
    document.getElementById('home-content').setAttribute('class', 'hide');
-   BuildNav(jsonURL);
+   buildNav(jsonURL);
 }
 
 function switchTraps()
@@ -73,5 +73,5 @@ function switchTraps()
    document.getElementById('decoys-content').setAttribute('class', 'hide');
    document.getElementById('traps-content').setAttribute('class', '');
    document.getElementById('home-content').setAttribute('class', 'hide');
-   BuildNav(jsonURL);
+   buildNav(jsonURL);
 }
