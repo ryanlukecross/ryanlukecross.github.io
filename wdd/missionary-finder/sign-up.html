@@ -15,36 +15,38 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="sign-up.html">Sign Up</a></li>
+            <li><a href="#">Success Stories</a></li>
             <li><a href="../wdd.html">Back to WDD 130</a></li>
+            <li><a href="#">FAQ</a></li>
             <li><a id='siteplan' href="site-plan.html">Site Plan</a></li>
          </ul>
       </nav>
-      <img src="images/banner.jpg" alt="banner of missionaries teaching">
+      <img src="images/tag-banner.jpg" alt="banner of missionaries teaching">
    </header>
    <main>
       <section id='login-selection'>
          <h1>Please enter your information below to sign up: </h1>
       </section>
-      <form action="#" method="post">
+      <form id='sign-up-form' action="#" method="post">
          <div id='radios'>
             <div>
-               <label for="gender"></label>
-               <input type="radio" name="gender" value='Mrs' required='required'>Missionary
-               <input type="radio" name="gender" value='Mr'>Convert
+               <label for="mc">Are you registering as a Former Missionary or a Convert?</label>
+               <input type="radio" class='sign-up-radio' name="gender" value='Mrs' required='required'>Missionary
+               <input type="radio" class='sign-up-radio' name="gender" value='Mr'>Convert
             </div>
          </div>
          <div id='hidden-radio-missionary'>
             <div>
                <label for="gender"></label>
-               <input type="radio" name="gender" value='Mrs' required='required'>Elder
-               <input type="radio" name="gender" value='Mr'>Sister
+               <input type=" class='sign-up-radio' name="gender" value='Mrs' required='required'>Elder
+               <input type="radio" class='sign-up-radio' name="gender" value='Mr'>Sister
             </div>
          </div>
          <div id='hidden-radio-convert'>
             <div>
                <label for="gender">Do you consider yourself active in the church?</label>
-               <input type="radio" name="gender" value='Mrs' required='required'>Yes
-               <input type="radio" name="gender" value='Mr'>No
+               <input type="radio" class='sign-up-radio' name="gender" value='Mrs' required='required'>Yes
+               <input type="radio" class='sign-up-radio' name="gender" value='Mr'>No
             </div>
          </div>
          <div id='textboxes'>
