@@ -105,12 +105,14 @@ ul {
   text-decoration: none;
   font-size: 1.25em;
   align-items: center;
-  color: tan;
+  color: white;
   text-shadow: 2px 2px black;
 }
 
 #links a:hover {
-  background-color: blue;
+  background-color: rgb(0, 0, 82);
+  box-shadow: 0px 0px 3px 5px navy inset;
+  box-shadow: 0px 2px 3px black;
 }
 
 #links a:visited {
