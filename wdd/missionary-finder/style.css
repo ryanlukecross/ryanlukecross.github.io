@@ -306,7 +306,7 @@ footer {
     width: 100%;
     display: grid;
     grid-template-columns: 12.5% 12.5% 1fr 1fr 12.5% 12.5%;
-    grid-template-rows: .25fr .5fr 1fr 1fr 1fr;
+    grid-template-rows: .25fr .5fr;
   }
 
   #grid-paragraph-1 {
@@ -319,9 +319,13 @@ footer {
   #combo {
     display: grid;
     width: 100%;
-    grid-column: 2/3;
-    grid-row: 1/7;
-    justify-items: space-between;
+    grid-column: 1/7;
+    grid-row-start: 2;
+  }
+
+  #flex-thing {
+    display: flex;
+    justify-content: space-between;
   }
   
   #grid-missionary {
@@ -337,6 +341,7 @@ footer {
   }
 
   #grid-convert img {
+    
     width: 400px;
   }
 }
