@@ -11,6 +11,31 @@ body {
    background-color: #FFFFFF;
 }
 
+#home-text {
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+}
+
+#home-recipes {
+   display: flex;
+   width: 40%;
+   flex-wrap: wrap;
+   align-content: flex-start;
+}
+
+#home-recipes h2 {
+   width: 400px;
+}
+
+.recipe-item p {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-self: center;
+   width: 200px;
+}
+
 #home-rocket-div {
    background-image: URL("/acme/images/site/feature.jpg");
    background-repeat: no-repeat;
