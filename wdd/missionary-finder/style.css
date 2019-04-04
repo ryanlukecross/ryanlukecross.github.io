@@ -81,33 +81,39 @@ button {
 }
 
 /*----------------------------------------------------------------------------- RULES FOR SIGN-UP.HTML -------------------------------------------------------------------*/
+section {
+  /* Just to center the form on the page */
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  /* To see the outline of the form */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  font-size: 18px;
+  display: flex;
+  flex-wrap: nowrap;  
+  overflow: hidden;
+}
 
 #sign-up-form {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 500px;
 }
 
-#sign-up-form div div label {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
+#sign-up-form {
+  background-color: black;
 }
 
 #sign-up-form div {
   display: flex;
-  border: 0;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
 }
 
-.sign-up-radio {
-  border: 0;
-  margin: 0;
-  padding: 0;
+#sign-up-form div div label {
+  width: 100%;
+  text-align: left;
 }
-
 
 /*--------------------------------------------------------------------------- Large Screen / General Rules --------------------------------------------------------------*/
 body {
