@@ -1,120 +1,151 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-   <meta charset="utf-8">
-   <title>Sign Up</title>
-   <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-   <header>
-      <nav id='nav'>
-         <ul id='links'>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="sign-up.html">Sign Up</a></li>
-            <li><a href="#">Success Stories</a></li>
-            <li><a href="../wdd.html">Back to WDD 130</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a id='siteplan' href="site-plan.html">Site Plan</a></li>
-         </ul>
+  <body>
+    <header>
+      <nav id="nav">
+        <ul id="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="sign-up.html">Sign Up</a></li>
+          <li><a href="#">Success Stories</a></li>
+          <li><a href="../wdd.html">Back to WDD 130</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a id="siteplan" href="site-plan.html">Site Plan</a></li>
+        </ul>
       </nav>
-      <img src="images/tag-banner.jpg" alt="banner of missionaries teaching">
-   </header>
-   <main>
-      <div id='login-selection'>
-         <h1>Please enter your information below to sign up: </h1>
+      <img src="images/tag-banner.jpg" alt="banner of missionaries teaching" />
+    </header>
+    <main>
+      <div id="login-selection">
+        <h1>Please enter your information below to sign up:</h1>
       </div>
-      <section id='sign-up-form' action="#" method="post">
-         <div id='radios'>
+      <section id="sign-up-form" action="#" method="post">
+        <div id="textboxes">
+          <div>
+            <label for="name">First Name*</label>
+            <input id='new-input' type="text" id="name" name="user_name" required="required" />
+          </div>
+          <div>
+            <label for="mail">Last Name*</label>
+            <input id='new-input' type="email" name="mail" id="user_mail" />
+          </div>
+          <div>
+            <label for="cell">Email*</label>
+            <input id='new-input' type="tel" name="cell" id="user_cell" />
+          </div>
+          <div>
+            <label for="message">Phone</label>
+            <input id='new-input' type="email" name="mail" id="user_mail" />
+          </div>
+        </div>
+        <div id="radios">
+          <div>
+            <label for="mc"
+              >Are you registering as a Former Missionary or a Convert?</label
+            >
+            <input id='new-input'
+              type="radio"
+              class="sign-up-radio"
+              name="gender"
+              value="Mrs"
+              required="required"
+            />Missionary
+            <input id='new-input'
+              type="radio"
+              class="sign-up-radio"
+              name="gender"
+              value="Mr"
+            />Convert
+          </div>
+        </div>
+        <div id="hidden-radio-missionary">
+          <div>
+            <label for="gender">What is your Gender?</label>
+            <input id='new-input'
+              type="radio"
+              class="sign-up-radio"
+              name="gender"
+              value="Mr"
+              required="required"
+            />Male
+            <input id='new-input'
+              type="radio"
+              class="sign-up-radio"
+              name="gender"
+              value="Mrs"
+            />Female
+          </div>
+        </div>
+        <div id="hidden-radio-convert">
+        </div>
+        <div id="final">
+          <div>
+            <input id='new-input'
+              type="checkbox"
+              name="interested1"
+              value="newsletter"
+              required="required"
+            />I wish to be signed up for the monthly newsletter <br />
+            <input id='new-input' type="checkbox" name="interested1" value="emails" />I agree
+            to the terms and conditions <br />
+          </div>
+          <div id="drop-downs">
             <div>
-               <label for="mc">Are you registering as a Former Missionary or a Convert?</label>
-               <input type="radio" class='sign-up-radio' name="gender" value='Mrs' required='required'>Missionary
-               <input type="radio" class='sign-up-radio' name="gender" value='Mr'>Convert
-            </div>
-         </div>
-         <div id='hidden-radio-missionary'>
-            <div>
-               <label for="gender"></label>
-               <input type=" class='sign-up-radio' name="gender" value='Mrs' required='required'>Elder
-               <input type="radio" class='sign-up-radio' name="gender" value='Mr'>Sister
-            </div>
-         </div>
-         <div id='hidden-radio-convert'>
-            <div>
-               <label for="gender">Do you consider yourself active in the church?</label>
-               <input type="radio" class='sign-up-radio' name="gender" value='Mrs' required='required'>Yes
-               <input type="radio" class='sign-up-radio' name="gender" value='Mr'>No
-            </div>
-         </div>
-         <div id='textboxes'>
-            <div>
-               <label for="name">First Name*</label>
-               <input type="text" id="name" name="user_name" required='required'>
+              <label for="hear">Mission Served In*</label>
+              <select name="hear" id="hear">
+                <option value="friends">Select Mission</option>
+                <option value="radio">... Mission List ...</option>
+              </select>
             </div>
             <div>
-               <label for="mail">Last Name*</label>
-               <input type="email" name="mail" id="user_mail">
+              <label for="start-date">Mission Start Date*</label>
+              <input id='new-input' type="date" name="start-date" />
             </div>
             <div>
-               <label for="cell">Email*</label>
-               <input type="tel" name="cell" id="user_cell">
+              <label for="end-date">Mission End Date*</label>
+              <input id='new-input' type="date" name="end-date" />
             </div>
-            <div>
-               <label for="message">Phone</label>
-               <input type="email" name="mail" id="user_mail">
-            </div>
-         </div>
-         <div id='drop-downs'>
-            <div>
-               <label for="hear">Mission Served In*</label>
-               <select name="hear" id="hear">
-                  <option value="friends">Select Mission</option>
-                  <option value="radio">... Mission List ...</option>
-               </select>
-            </div>
-            <div>
-               <label for="start-date">Mission Start Date*</label>
-               <input type="date" name="start-date">
-            </div>
-            <div>
-               <label for="end-date">Mission End Date*</label>
-               <input type="date" name="end-date">
-            </div>
-         </div>
-         <div>
-            <button type='submit'>Submit</button>
-         </div>
-         <div>
-            <input type='checkbox' name='interested1' value='newsletter' required='required'>I wish to be signed up for
-            the monthly newsletter <br>
-            <input type="checkbox" name="interested1" value='emails'>I agree to the terms and conditions <br>
-         </div>
+            <button id='clear-button' type="submit">Submit</button>
+          </div>
+          
+        </div>
       </section>
-   </main>
-   <footer>
+    </main>
+    <footer>
       <p>&copy; 2019 Dry Oar - Ryan Cross - WDD 130 Section 02</p>
       <div class="social">
-         <a href="https://www.facebook.com" target="_blank">
-            <img src="https://cdn.glitch.com/2a6bdc2e-4eba-4081-8394-ea3d57846d68%2Ffacebook.png?1548955496261"
-               alt="Facebook icon" />
-         </a>
-         <a href="https://www.youtube.com" target="_blank">
-            <img src="https://cdn.glitch.com/2a6bdc2e-4eba-4081-8394-ea3d57846d68%2Fyoutube.png?1548955496328"
-               alt="Youtube icon" />
-         </a>
-         <a href="https://www.instagram.com" target="_blank">
-            <img src="https://cdn.glitch.com/2a6bdc2e-4eba-4081-8394-ea3d57846d68%2Finstagram.png?1548955496368"
-               alt="Instagram icon" />
-         </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img
+            src="https://cdn.glitch.com/2a6bdc2e-4eba-4081-8394-ea3d57846d68%2Ffacebook.png?1548955496261"
+            alt="Facebook icon"
+          />
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+          <img
+            src="https://cdn.glitch.com/2a6bdc2e-4eba-4081-8394-ea3d57846d68%2Fyoutube.png?1548955496328"
+            alt="Youtube icon"
+          />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img
+            src="https://cdn.glitch.com/2a6bdc2e-4eba-4081-8394-ea3d57846d68%2Finstagram.png?1548955496368"
+            alt="Instagram icon"
+          />
+        </a>
       </div>
-      <p>This website is in no way affiliated with the Church of Jesus Christ of Latter-Day Saints. This website is
-         intended for educational purposes only. None of the forms on this website actually save any information at all
-         and are intended in teaching me website design principles. With any questions, please email me at:
-         ryanlukecross@live.com</p>
-   </footer>
-</body>
-
+      <p>
+        This website is in no way affiliated with the Church of Jesus Christ of
+        Latter-Day Saints. This website is intended for educational purposes
+        only. None of the forms on this website actually save any information at
+        all and are intended in teaching me website design principles. With any
+        questions, please email me at: ryanlukecross@live.com
+      </p>
+    </footer>
+  </body>
 </html>
