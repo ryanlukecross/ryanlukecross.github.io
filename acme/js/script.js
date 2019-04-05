@@ -15,12 +15,11 @@ function buildNav(URL) {
          throw new ERROR('Network response was not OK.');
       }).then(function (data) {
          let tom = data.Titles;
-         console.log("This is tom: " + data);
-         content += "<li><button type='button' id='home-button' onclick='switchTo('" + "Home" + "')'>" + "Home" + "</button></li> " +
-            "<li><button type='button' id='anvil-button' onclick='switchTo('" + tom.first + "')'>" + tom.first + "</button></li>" +
-            "<li><button type='button' id='explosives-button' onclick='switchTo('" + tom.second + "')'>" + tom.second + "</button></li>" +
-            "<li><button type='button' id='decoys-button' onclick='switchTo('" + tom.third + "')'>" + tom.third + "</button></li>" +
-            "<li><button type='button' id='traps-button' onclick='switchTo('" + tom.fourth + "')'>" + tom.fourth + "</button></li>";
+         content += "<li><button type='button' id='home-button' onclick='switch"        + "Home"     + "()'>" + "Home"     + "</button></li> " +
+                    "<li><button type='button' id='anvil-button' onclick='switch"       + tom.first  + "()'>" + tom.first  + "</button></li>" + 
+                    "<li><button type='button' id='explosives-button' onclick='switch"  + tom.second  + "()'>" + tom.second + "</button></li>" + 
+                    "<li><button type='button' id='decoys-button' onclick='switch"      + tom.third  + "()'>" + tom.third  + "</button></li>" + 
+                    "<li><button type='button' id='traps-button' onclick='switch"       + tom.fourth  + "()'>" + tom.fourth + "</button></li>";
          document.getElementById('nav-ul').innerHTML = content;
          console.log("The navigation bar was created by Javascript here AS: " + content);
       })
@@ -31,21 +30,41 @@ function buildNav(URL) {
    document.getElementById("nav-ul").innerHTML = content;
 }
 
-
-function switchTo(type) {
-   alert(type);
-   if (type == 'home') {
-      document.getElementById('home-content').setAttribute('class', '');
-      document.getElementById('more-basic-than-basic').setAttribute('class', 'hide');
-   } else {
-      buildPage(type);
-      document.getElementById('home-content').setAttribute('class', 'hide');
-      document.getElementById('more-basic-than-basic').setAttribute('class', '');
-   }
-   buildNav(jsonURL);
+function switchHome()
+{
+   document.getElementById('home-content').setAttribute('class', '');
+   document.getElementById('more-basic-than-basic').setAttribute('class', 'hide');
 }
 
-function buildPage(type) {
+function switchAnvils()
+{
+   buildPage(jsonURL, "Anvils");
+   document.getElementById('home-content').setAttribute('class', 'hide');
+   document.getElementById('more-basic-than-basic').setAttribute('class', '');
+}
+
+function switchExplosives()
+{
+   buildPage(jsonURL, "Explosives");
+   document.getElementById('home-content').setAttribute('class', 'hide');
+   document.getElementById('more-basic-than-basic').setAttribute('class', '');
+}
+
+function switchDecoys()
+{
+   buildPage(jsonURL, 'Decoys');
+   document.getElementById('home-content').setAttribute('class', 'hide');
+   document.getElementById('more-basic-than-basic').setAttribute('class', '');
+}
+
+function switchTraps()
+{
+   buildPage(jsonURL, "Traps");
+   document.getElementById('home-content').setAttribute('class', 'hide');
+   document.getElementById('more-basic-than-basic').setAttribute('class', '');
+}
+
+function buildPage(URL, type) {
    let content = "";
    fetch(URL)
       .then(function (response) {
@@ -54,53 +73,19 @@ function buildPage(type) {
          }
          throw new ERROR('Network response was not OK.');
       }).then(function (data) {
-         let tom = data.Titles;
-         let Home = "home";
-         let Anvils = "anvils";
-         let Explosives = "explosives";
-         let Decoys = "decoys";
-         let Traps = "traps";
-         content += "<li><button type='button' id='home-button' onclick='switchTo(" + "Home" + ")'>" + "Home" + "</button></li> " +
-            "<li><button type='button' id='anvil-button' onclick='switchTo(" + tom.first + ")'>" + tom.first + "</button></li>" +
-            "<li><button type='button' id='explosives-button' onclick='switchTo(" + tom.second + ")'>" + tom.second + "</button></li>" +
-            "<li><button type='button' id='decoys-button' onclick='switchTo(" + tom.third + ")'>" + tom.third + "</button></li>" +
-            "<li><button type='button' id='traps-button' onclick='switchTo(" + tom.fourth + ")'>" + tom.fourth + "</button></li>";
-         document.getElementById('nav-ul').innerHTML = content;
-         console.log("The navigation bar was created by Javascript here AS: " + content);
+         // Do stuff in here!!!
+         let d = data[type];
+         console.log("Type: ", type);
+         document.getElementById("basic-image").setAttribute('src', d['path']);
+         document.getElementById("basic-header").innerHTML = d['name'];
+         document.getElementById("basic-paragraph").innerHTML = d['description'];
+         document.getElementById("basic-info-1").innerHTML = "<strong>Made by: </strong>" + d['manufacturer'];
+         document.getElementById("basic-info-2").innerHTML = "<strong>Reviews: </strong>" + d['reviews'] + " stars";
+         document.getElementById("basic-price").innerHTML = "Price: $" + d['price'];
+
       })
       .catch(function (error) {
          console.log('There was a fetch problem: ', error.message);
          alert('Sorry, the data could not be processed.');
       })
-   document.getElementById("nav-ul").innerHTML = content;
 }
-/*
-function switchHome()
-{
-   document.getElementById('home-content').setAttribute('class', '');
-   document.getElementById('more-basic-than-basic').setAttribute('class', );
-   buildNav(jsonURL);
-}
-
-
-function switchExplosives()
-{
-   document.getElementById('home-content').setAttribute('class', '');
-   document.getElementById('more-basic-than-basic').setAttribute('class', );
-   buildNav(jsonURL);
-}
-
-function switchDecoys()
-{
-   document.getElementById('home-content').setAttribute('class', '');
-   document.getElementById('more-basic-than-basic').setAttribute('class', );
-   buildNav(jsonURL);
-}
-
-function switchTraps()
-{
-   document.getElementById('home-content').setAttribute('class', '');
-   document.getElementById('more-basic-than-basic').setAttribute('class', );
-   buildNav(jsonURL);
-}
-*/

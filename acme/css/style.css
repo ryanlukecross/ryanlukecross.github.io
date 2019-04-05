@@ -5,10 +5,52 @@ html {
    background-size: cover;
 }
 
+.hide {
+   display: none;
+}
+
+h1 {
+   padding-top: 0;
+   margin-top: 0;
+}
+
 body {
    padding-right: 20px;
    margin-left: 20px;
    background-color: #FFFFFF;
+}
+
+#basic-home {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   flex-wrap: nowrap;
+   padding-left: 2em;
+   padding-right: 2em;
+}
+
+
+#basic-flex {
+   padding-left: 2em;
+}
+
+#basic-info-1 {
+   margin-bottom: 0;
+}
+
+#basic-paragraph {
+   display: flex;
+   flex-wrap: wrap;
+   padding-right: 2em;
+}
+
+#basic-info-2 {
+   margin-top: 0;
+}
+
+h3 {
+   color: red;
+   font-size: 35px;  
 }
 
 #home-text {
@@ -41,16 +83,20 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    height: 600px;
+   display: flex;
+   flex-direction: row-reverse;
 }
 
 #home-rocket-ad {
-   z-index: 2;
-
+   padding: .5em .5em .5em .5em;
+   font-size: 40px;
+   color: #DE2226;
 }
 
-.hide {
-   display: none;
+#home-rocket-ad h2 {
+   margin: 0;
 }
+
 
 button {
    padding-top: 10px;
