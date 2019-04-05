@@ -56,6 +56,7 @@ h3 {
 #home-text {
    display: flex;
    flex-direction: row-reverse;
+   font-size: 1.5em;
    justify-content: flex-end;
 }
 
@@ -64,10 +65,30 @@ h3 {
    width: 40%;
    flex-wrap: wrap;
    align-content: flex-start;
+   padding-left: 1em;
 }
 
 #home-recipes h2 {
    width: 400px;
+}
+
+#home-recipes div img {
+   width: 90px;
+   display: flex;
+   align-self: center;
+}
+
+#home-recipes div {
+   display: flex;
+   flex-direction: column;
+   background-color: lightgrey;
+}
+
+#home-recipes div p {
+   display: flex;
+   text-align: center;
+   background-color: white;
+   font-size: .5em;
 }
 
 .recipe-item p {

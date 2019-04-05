@@ -5,6 +5,8 @@ console.log("script.js is being read");
 const jsonURL = '/acme/js/acme.json';
 buildNav(jsonURL);
 
+document.getElementById('more-basic-than-basic').setAttribute('class', 'hide');
+
 function buildNav(URL) {
    let content = "";
    fetch(URL)
