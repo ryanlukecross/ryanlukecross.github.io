@@ -26,94 +26,67 @@
         <h1>Please enter your information below to sign up:</h1>
       </div>
       <section id="sign-up-form" action="#" method="post">
-        <div id="textboxes">
-          <div>
-            <label for="name">First Name*</label>
-            <input id='new-input' type="text" id="name" name="user_name" required="required" />
-          </div>
-          <div>
-            <label for="mail">Last Name*</label>
-            <input id='new-input' type="email" name="mail" id="user_mail" />
-          </div>
-          <div>
-            <label for="cell">Email*</label>
-            <input id='new-input' type="tel" name="cell" id="user_cell" />
-          </div>
-          <div>
-            <label for="message">Phone</label>
-            <input id='new-input' type="email" name="mail" id="user_mail" />
-          </div>
+        <div class="first-grid">
+          <label for="name">First Name*</label>
+          <input type="text" id="name" name="user_name" required="required" />
         </div>
-        <div id="radios">
-          <div>
-            <label for="mc"
-              >Are you registering as a Former Missionary or a Convert?</label
-            >
-            <input id='new-input'
-              type="radio"
-              class="sign-up-radio"
-              name="gender"
-              value="Mrs"
-              required="required"
-            />Missionary
-            <input id='new-input'
-              type="radio"
-              class="sign-up-radio"
-              name="gender"
-              value="Mr"
-            />Convert
-          </div>
+        <div class="flex-left">
+          <label for="mail">Last Name*</label>
+          <input type="email" name="mail" id="user_mail" />
         </div>
-        <div id="hidden-radio-missionary">
-          <div>
-            <label for="gender">What is your Gender?</label>
-            <input id='new-input'
-              type="radio"
-              class="sign-up-radio"
-              name="gender"
-              value="Mr"
-              required="required"
-            />Male
-            <input id='new-input'
-              type="radio"
-              class="sign-up-radio"
-              name="gender"
-              value="Mrs"
-            />Female
-          </div>
+        <div class="flex-left">
+          <label for="cell">Email*</label>
+          <input type="tel" name="cell" id="user_cell" />
         </div>
-        <div id="hidden-radio-convert">
+        <div class="flex-left">
+          <label for="message">Phone</label>
+          <input type="email" name="mail" id="user_mail" />
+        </div>
+        <div class="flex-left">
+          <label for="hear">Select Your Gender</label>
+          <select name="hear" id="hear">
+            <option value="friends">Select one...</option>
+            <option value="radio">Male</option>
+            <option value="radio">Female</option>
+          </select>
+        </div>
+        <div class="flex-left">
+          <label for="hear">Do you Consider Yourself:</label>
+          <select name="hear" id="hear">
+            <option value="friends">Active in the Church</option>
+            <option value="radio">Less-Active</option>
+            <option value="radio">Less-Active/Returning</option>
+            <option value="radio">Inactive</option>
+          </select>
+        </div>
+        <div class="flex-left">
+          <label for="hear">Mission Served In*</label>
+          <select name="hear" id="hear">
+            <option value="friends">Select Mission</option>
+            <option value="radio">... Mission List ...</option>
+          </select>
+        </div>
+        <div class="flex-left">
+          <label for="start-date">Mission Start Date*</label>
+          <input type="date" name="start-date" />
+        </div>
+        <div class="flex-left">
+          <label for="end-date">Mission End Date*</label>
+          <input type="date" name="end-date" />
         </div>
         <div id="final">
-          <div>
-            <input id='new-input'
+          <div class="newsletter">
+            <input
               type="checkbox"
               name="interested1"
               value="newsletter"
               required="required"
             />I wish to be signed up for the monthly newsletter <br />
-            <input id='new-input' type="checkbox" name="interested1" value="emails" />I agree
+            <input type="checkbox" name="interested1" value="emails" />I agree
             to the terms and conditions <br />
           </div>
-          <div id="drop-downs">
-            <div>
-              <label for="hear">Mission Served In*</label>
-              <select name="hear" id="hear">
-                <option value="friends">Select Mission</option>
-                <option value="radio">... Mission List ...</option>
-              </select>
-            </div>
-            <div>
-              <label for="start-date">Mission Start Date*</label>
-              <input id='new-input' type="date" name="start-date" />
-            </div>
-            <div>
-              <label for="end-date">Mission End Date*</label>
-              <input id='new-input' type="date" name="end-date" />
-            </div>
-            <button id='clear-button' type="submit">Submit</button>
-          </div>
           
+          <button id="clear-button" type="submit">Submit</button>
         </div>
       </section>
     </main>

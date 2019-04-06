@@ -83,55 +83,36 @@ textarea {
 /*----------------------------------------------------------------------------- RULES FOR SIGN-UP.HTML -------------------------------------------------------------------*/
 
 section {
-  /* Just to center the form on the page */
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  /* To see the outline of the form */
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-  font-size: 18px;
-  display: flex;
-  flex-wrap: wrap;  
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
-  align-self: center;
+  border: 2px solid;
+  border-radius: 25px;
 }
 
-#new-input {
-  display: inline-block;
-  width: 100%;
+.first-grid {
+  margin-top: 20px;
 }
 
-.sign-up-radio {
-  width: 10px;
+section div label {
+  width: 45%;
 }
 
-#sign-up-form div div {
-  display: inline-block;
+section div {
+  margin-bottom: 10px;
 }
 
-#sign-up-form div div label {
+.newsletter {
   width: 100%;
   text-align: left;
 }
 
-#sign-up-form div div input {
-  margin-bottom: 10px;
+.newsletter input {
+  width: 30px;
+  margin-left: 45%;
 }
 
-#sign-up-form {
-  width: 100%;
-  height: 450px;
-  margin: 0 0 0px;
-  display: flex;
-  justify-content: space-between;
+#clear-button {
+  margin-top: 20px;
+  margin-left: 65%;
 }
-
-
-
 
 /*--------------------------------------------------------------------------- Large Screen / General Rules --------------------------------------------------------------*/
 body {
@@ -260,6 +241,10 @@ h2 a {
 footer {
   width: 100%;
   padding-top: 80px;
+}
+
+footer p {
+  width: 70%;
 }
 
 footer a {
