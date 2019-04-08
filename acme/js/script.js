@@ -15,6 +15,7 @@ function buildNav(URL) {
          throw new ERROR('Network response was not OK.');
       }).then(function (data) {
          let tom = data.Titles;
+         console.log("The JSON Object: ", data);
          content += "<li><button type='button' id='home-button' onclick='switch" + "Home" + "()'>" + "Home" + "</button></li> " +
             "<li><button type='button' id='anvil-button' onclick='switch" + tom.first + "()'>" + tom.first + "</button></li>" +
             "<li><button type='button' id='explosives-button' onclick='switch" + tom.second + "()'>" + tom.second + "</button></li>" +
