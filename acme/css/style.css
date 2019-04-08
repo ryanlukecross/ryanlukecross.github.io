@@ -20,6 +20,10 @@ body {
    background-color: #FFFFFF;
 }
 
+footer {
+   padding-bottom: 20px;
+}
+
 #basic-home {
    display: flex;
    flex-direction: row;
@@ -96,10 +100,16 @@ h3 {
    display: flex;
    text-align: center;
    background-color: white;
-   font-size: .5em;
+   font-size: .75em;
    margin-bottom: 0px;
    padding-bottom: 10px;
    border-bottom: 0;
+   color: #0000EE;
+   text-decoration: underline;
+}
+
+#home-recipes div p:hover {
+   cursor: pointer;
 }
 
 .recipe-item p {
@@ -201,4 +211,84 @@ hr {
    background-color: black;
    color: black;
    border-color: black;
+}
+
+@media screen AND (max-width: 1300px) {
+
+   #home-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5em;
+      justify-content: flex-end;
+   }
+   
+   #home-recipes {
+      display: flex;
+      width: 500px;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      padding-left: 1em;
+   }
+   
+   #home-recipes h2 {
+      width: 100%;
+   }
+   
+   #home-recipes div img {
+      width: 90px;
+      display: flex;
+      align-self: center;
+   }
+   
+   #home-recipes div {
+      display: flex;
+      flex-direction: column;
+      background-color: #808080;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+      border-right: 20px;
+      border-width: 20px;
+      border-style: solid;
+      border-color: white;
+   }
+   
+   
+   #home-recipes div p {
+      display: flex;
+      text-align: center;
+      background-color: white;
+      font-size: .5em;
+      margin-bottom: 0px;
+      padding-bottom: 10px;
+      border-bottom: 0;
+   }
+   
+   .recipe-item p {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-self: center;
+      width: 200px;
+   }
+   
+   #home-rocket-div {
+      background-image: URL("/acme/images/site/feature.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      flex-direction: row-reverse;
+   }
+   
+   #home-rocket-ad {
+      padding: .5em .5em .5em .5em;
+      font-size: 40px;
+      color: #DE2226;
+   }
+   
+   #home-rocket-ad h2 {
+      margin: 0;
+   }
+
 }

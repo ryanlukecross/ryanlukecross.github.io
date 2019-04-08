@@ -30,6 +30,7 @@ function buildNav(URL) {
    document.getElementById("nav-ul").innerHTML = content;
 }
 function switchHome() {
+   document.getElementById('title').innerHTML = "Acme Industries | Home"
    document.getElementById('home-content').setAttribute('class', '');
    document.getElementById('more-basic-than-basic').setAttribute('class', 'hide');
 }
@@ -70,6 +71,7 @@ function buildPage(URL, type) {
          document.getElementById("basic-info-1").innerHTML = "<strong>Made by: </strong>" + d['manufacturer'];
          document.getElementById("basic-info-2").innerHTML = "<strong>Reviews: </strong>" + d['reviews'] + " stars";
          document.getElementById("basic-price").innerHTML = "Price: $" + d['price'];
+         document.getElementById('title').innerHTML = "Acme Industries | " + type;
       })
       .catch(function (error) {
          console.log('There was a fetch problem: ', error.message);
