@@ -81,14 +81,25 @@ h3 {
 #home-recipes div {
    display: flex;
    flex-direction: column;
-   background-color: lightgrey;
+   background-color: #808080;
+   margin-bottom: 0;
+   padding-bottom: 0;
+   border-bottom: 0;
+   border-right: 20px;
+   border-width: 20px;
+   border-style: solid;
+   border-color: white;
 }
+
 
 #home-recipes div p {
    display: flex;
    text-align: center;
    background-color: white;
    font-size: .5em;
+   margin-bottom: 0px;
+   padding-bottom: 10px;
+   border-bottom: 0;
 }
 
 .recipe-item p {

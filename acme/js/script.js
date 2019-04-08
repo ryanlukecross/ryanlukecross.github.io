@@ -1,5 +1,7 @@
 /* Javascript file for the ACME Final Project CIT230 */
 console.log("script.js is being read");
+
+switchHome();
 // Set the path to the JSON file and call the build nav file
 const jsonURL = '/acme/js/acme.json';
 buildNav(jsonURL);
