@@ -277,10 +277,11 @@ hr {
    #home-rocket-div {
       background-image: URL("/acme/images/site/feature.jpg");
       background-repeat: no-repeat;
+      background-position: top left;
       background-size: cover;
-      height: 400px;
       display: flex;
       flex-direction: row-reverse;
+      height: 300px;
    }
 
    #home-rocket-ad {
@@ -297,4 +298,50 @@ hr {
       opacity: 1;
    }
 
+}
+
+@media screen AND (max-width: 680px) {
+   nav ul li {
+      font-size: 10px;
+   }
+   #home-rocket-div {
+      height: 400px;
+      background-size: contain;
+      flex-direction: row;
+   }
+   #home-rocket-ad {
+      justify-self: center;
+      background: rgba(0,0,0,0);
+      padding-top: 50%;
+      padding-left: 30%;
+      font-size: 16px;
+   }
+
+   #home-recipes {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      padding-left: 1em;
+   }
+
+   #home-recipes div img {
+      width: 120px;
+      display: flex;
+      align-self: center;
+   }
+
+   #home-recipes div {
+      display: flex;
+      flex-direction: column;
+      background-color: #808080;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+      border-right: 20px;
+      border-width: 20px;
+      border-style: solid;
+      border-color: white;
+   }
 }
